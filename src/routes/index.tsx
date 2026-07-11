@@ -155,9 +155,9 @@ const milestones: {
   body: string;
 }[] = [
   { year: "2012", kind: "edu", title: "Class X — 85.6%", company: "MP Board", body: "Where showing up early and finishing the paper first became a habit." },
-  { year: "2014", kind: "edu", title: "Class XII — 86.6%", company: "MP Board", body: "PCM. The runway into JEE and engineering." },
-  { year: "2015", kind: "cert", title: "JEE Advanced · AIR 7151", body: "The entrance exam that opened the first door — B.Tech at NIT, Bhopal." },
-  { year: "2015 — 2019", kind: "edu", title: "B.Tech, ECE", company: "Maulana Azad NIT, Bhopal", body: "Engineering opened the first door. The years after turned into operations, code, product, and a taste for systems." },
+  { year: "2014", kind: "edu", title: "Class XII — 86.6%", company: "MP Board", body: "PCM. The runway into JEE Advanced and engineering." },
+  { year: "2015", kind: "cert", title: "JEE Advanced · AIR 7151", body: "The entrance exam that opened the first door to NIT, Bhopal." },
+  { year: "2015 — 2019", kind: "edu", title: "B.Tech, Mechanical", company: "Maulana Azad NIT, Bhopal", body: "Engineering opened the first door. The years after turned into operations, code, product, and a taste for systems." },
   { year: "2016", kind: "cert", title: "Trading Certificate · Taking Forward", body: "Skin in the game. Risk, position sizing, and the difference between opinion and conviction." },
   { year: "2019", kind: "cert", title: "Machine Learning A–Z · Udemy", body: "Picked up in college, before Avsar. Intuition for regression, classification, clustering — and where they break." },
   { year: "07/2019", kind: "role", title: "Product Manager", company: "Avsar HR Services", body: "Migration to a proprietary platform (₹26.4L annual savings), unified Hire-to-Retire, and a configurable ATS for high-volume hiring." },
@@ -620,7 +620,7 @@ function Home() {
               return (
                 <li
                   key={`${m.year}-${m.title}`}
-                  className={`relative mb-10 flex flex-col md:mb-14 md:w-1/2 ${
+                  className={`relative mb-8 flex flex-col md:mb-10 md:w-1/2 ${
                     isRight ? "md:ml-auto md:pl-12" : "md:pr-12"
                   }`}
                 >

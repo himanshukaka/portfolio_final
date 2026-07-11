@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link, createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "../components/page-header";
 
 export const Route = createFileRoute("/work")({
@@ -164,6 +164,29 @@ function WorkPage() {
               </ul>
             </article>
           ))}
+        </div>
+        <div className="mt-8 rounded-[32px] border border-charcoal/10 bg-[linear-gradient(180deg,#fffaf2_0%,#ffffff_100%)] p-6 shadow-[0_18px_60px_rgba(15,23,42,0.05)]">
+          <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+            <div>
+              <div className="text-[11px] font-semibold uppercase tracking-[0.25em] text-terracotta">
+                New case study
+              </div>
+              <h3 className="mt-3 font-serif text-3xl text-charcoal">
+                CohortUp
+              </h3>
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-charcoal/70">
+                A product case study about one person starting an activity,
+                another live person joining the same activity, and both
+                turning that shared session into a split-screen timelapse post.
+              </p>
+            </div>
+            <Link
+              to="/cohortup"
+              className="inline-flex items-center justify-center rounded-full bg-charcoal px-5 py-3 text-sm font-medium text-ivory transition-colors hover:bg-charcoal/85"
+            >
+              Read the case study
+            </Link>
+          </div>
         </div>
       </section>
 

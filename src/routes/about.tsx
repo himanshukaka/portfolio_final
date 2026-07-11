@@ -109,11 +109,11 @@ const journey = [
   {
     year: "2015 — 2019",
     kind: "role" as const,
-    role: "B.Tech, Electronics & Communication",
+    role: "B.Tech, Mechanical Engineering",
     company: "Maulana Azad NIT, Bhopal",
     location: "Bhopal",
     note:
-      "Engineering opened the first door. JEE Advanced 2015 — All-India Rank 7151. The years after turned into operations, code, product, and a taste for systems.",
+      "Engineering opened the first door. JEE Advanced 2015 — AIR 7151. The years after turned into operations, code, product, and a taste for systems.",
   },
   {
     year: "2014",
@@ -238,7 +238,7 @@ function AboutPage() {
       </section>
 
       {/* Career roadmap */}
-      <section className="mx-auto max-w-4xl px-6 py-16 border-t border-charcoal/10">
+      <section className="mx-auto max-w-4xl border-t border-charcoal/10 px-6 py-12 lg:py-14">
         <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.25em] text-terracotta">
           The roadmap
         </span>
@@ -258,7 +258,7 @@ function AboutPage() {
         </div>
         <ol className="relative border-l-2 border-terracotta/30 pl-8">
           {journey.map((j, i) => (
-            <li key={j.year} className="relative pb-10 last:pb-0">
+            <li key={j.year} className="relative pb-8 last:pb-0">
               <span
                 className={
                   "absolute -left-[41px] mt-2 flex size-5 items-center justify-center rounded-full border-2 bg-ivory " +
