@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link, createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "../components/page-header";
 
 export const Route = createFileRoute("/experiments")({
@@ -48,11 +48,11 @@ const experiments = [
     ],
   },
   {
-    name: "Zunction",
-    year: "2019",
+    name: "Zunction.in",
+    year: "2023",
     kind: "Marketplace · Founder-led",
     hypothesis:
-      "That underused educational infrastructure — empty classrooms in the evenings — could become shared studio space for independent educators.",
+      "That underused educational infrastructure — empty classrooms in the evenings — could become shared teaching space for independent educators.",
     story: [
       {
         h: "The market observation",
@@ -64,7 +64,7 @@ const experiments = [
       },
       {
         h: "Why it stopped",
-        p: "Unit economics of physical space did not scale with a thin software layer. The supply side worked; the demand side needed a distribution motion we didn't have.",
+        p: "The unit economics of physical space did not scale with a thin software layer. The supply side worked; the demand side needed a distribution motion we didn't have.",
       },
       {
         h: "What it taught me",
@@ -80,8 +80,8 @@ function ExperimentsPage() {
       <PageHeader
         eyebrow="Experiments"
         eyebrowColor="text-marigold"
-        title={<>Things I tried to build.</>}
-        lede="Some became products. Some became lessons. I'm not going to rewrite failure as success — the quality of the thinking and the honesty of the reflection are the point."
+        title={<>Things That Didn't Work Out.</>}
+        lede="Some became products. Some became lessons. The point isn't to rewrite failure as success, but to be honest about what was learned. The quality of the reflection matters more than the outcome."
       />
       <div className="mx-auto max-w-6xl space-y-24 px-6 pb-32">
         {experiments.map((e) => (
@@ -109,10 +109,5 @@ function ExperimentsPage() {
                   </p>
                 </div>
               ))}
-            </div>
-          </article>
-        ))}
-      </div>
-    </>
-  );
-}
+              {e.name === "Zunction.in" ? (
+                

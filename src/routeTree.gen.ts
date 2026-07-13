@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ZunctionRouteImport } from './routes/zunction'
 import { Route as WritingRouteImport } from './routes/writing'
 import { Route as WorkRouteImport } from './routes/work'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
@@ -19,6 +20,11 @@ import { Route as CohortupRouteImport } from './routes/cohortup'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const ZunctionRoute = ZunctionRouteImport.update({
+  id: '/zunction',
+  path: '/zunction',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WritingRoute = WritingRouteImport.update({
   id: '/writing',
   path: '/writing',
@@ -75,6 +81,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work': typeof WorkRoute
   '/writing': typeof WritingRoute
+  '/zunction': typeof ZunctionRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -86,6 +93,7 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work': typeof WorkRoute
   '/writing': typeof WritingRoute
+  '/zunction': typeof ZunctionRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -98,6 +106,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/work': typeof WorkRoute
   '/writing': typeof WritingRoute
+  '/zunction': typeof ZunctionRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -111,6 +120,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/work'
     | '/writing'
+    | '/zunction'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -122,6 +132,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/work'
     | '/writing'
+    | '/zunction'
   id:
     | '__root__'
     | '/'
@@ -133,6 +144,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/work'
     | '/writing'
+    | '/zunction'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -145,10 +157,18 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   WorkRoute: typeof WorkRoute
   WritingRoute: typeof WritingRoute
+  ZunctionRoute: typeof ZunctionRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/zunction': {
+      id: '/zunction'
+      path: '/zunction'
+      fullPath: '/zunction'
+      preLoaderRoute: typeof ZunctionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/writing': {
       id: '/writing'
       path: '/writing'
@@ -225,6 +245,7 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   WorkRoute: WorkRoute,
   WritingRoute: WritingRoute,
+  ZunctionRoute: ZunctionRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowUpRight } from "lucide-react";
 import { posts } from "./writing";
 
 function substackHomeEmbedUrl(postUrl: string): string {
@@ -56,8 +57,7 @@ const caseStudies = [
     n: "02",
     title: "How Do You Turn Seven Fragmented Journeys Into One Coherent System?",
     subtitle: "Designing lifecycle workflows around a shared Assignment ID architecture.",
-    question:
-      "How do you turn fragmented business operations into one coherent product system?",
+    question: "How do you turn fragmented business operations into one coherent product system?",
     summary:
       "Zero-to-one workforce platform — workflow architecture, platform boundaries, and sequencing scope to earn the right to keep building.",
     tag: "Zero to One",
@@ -66,8 +66,7 @@ const caseStudies = [
     n: "03",
     title: "What Breaks When Internal Software Becomes SaaS?",
     subtitle: "Turning an operational platform into a configurable multi-customer product.",
-    question:
-      "What breaks when software built for one organization has to serve many?",
+    question: "What breaks when software built for one organization has to serve many?",
     summary:
       "Configuration over customization, tenant differences, and the shift from users to customers when your platform stops being yours alone.",
     tag: "Platform",
@@ -76,8 +75,7 @@ const caseStudies = [
     n: "04",
     title: "Modernizing a System That Cannot Afford to Fail",
     subtitle: "Rebuilding configurability into a business-critical enterprise platform.",
-    question:
-      "How do you modernize a rigid system without disrupting the operation it runs?",
+    question: "How do you modernize a rigid system without disrupting the operation it runs?",
     summary:
       "AI-assisted validation and audit trails, legacy modernization without breaking operational trust — the domain was payroll; the lesson was risk.",
     tag: "Modernization",
@@ -90,8 +88,7 @@ const fieldNotes = [
     title: "The Copy-Paste Filter",
     subtitle: "Why a search box wasn't enough.",
     tag: "Field study · Enterprise UX",
-    body:
-      "Recruiters weren't searching for one name at a time — they were pasting blocks of data out of Excel. Excel was not the enemy; it was evidence. A parsing multi-filter with inline dedup and error recovery cut task time by ~40% without adding a single new screen.",
+    body: "Recruiters weren't searching for one name at a time — they were pasting blocks of data out of Excel. Excel was not the enemy; it was evidence. A parsing multi-filter with inline dedup and error recovery cut task time by ~40% without adding a single new screen.",
   },
   {
     n: "06",
@@ -99,8 +96,7 @@ const fieldNotes = [
     subtitle:
       "What leaving the office taught me about documents, signatures, and operational reality.",
     tag: "Field study · Trust workflows",
-    body:
-      "I thought the problem was a signature workflow. It wasn't. It was a trust workflow the office diagrams didn't capture. The product decision came from the field, not the roadmap.",
+    body: "I thought the problem was a signature workflow. It wasn't. It was a trust workflow the office diagrams didn't capture. The product decision came from the field, not the roadmap.",
   },
 ];
 
@@ -114,12 +110,12 @@ const experiments = [
     tag: "Consumer social · 2021",
   },
   {
-    name: "Zunction",
+    name: "Zunction.in",
     question:
       "Can unused educational infrastructure become shared space for independent educators?",
     reflection:
       "The B2B partnership motion worked; the unit economics of physical space did not. Verifying distribution costs before building the tech would have saved a year.",
-    tag: "Marketplace · 2019",
+    tag: "Marketplace · 2023",
   },
 ];
 
@@ -154,25 +150,118 @@ const milestones: {
   company?: string;
   body: string;
 }[] = [
-  { year: "2012", kind: "edu", title: "Class X — 85.6%", company: "MP Board", body: "Where showing up early and finishing the paper first became a habit." },
-  { year: "2014", kind: "edu", title: "Class XII — 86.6%", company: "MP Board", body: "PCM. The runway into JEE Advanced and engineering." },
-  { year: "2015", kind: "cert", title: "JEE Advanced · AIR 7151", body: "The entrance exam that opened the first door to NIT, Bhopal." },
-  { year: "2015 — 2019", kind: "edu", title: "B.Tech, Mechanical", company: "Maulana Azad NIT, Bhopal", body: "Engineering opened the first door. The years after turned into operations, code, product, and a taste for systems." },
-  { year: "2016", kind: "cert", title: "Trading Certificate · Taking Forward", body: "Skin in the game. Risk, position sizing, and the difference between opinion and conviction." },
-  { year: "2019", kind: "cert", title: "Machine Learning A–Z · Udemy", body: "Picked up in college, before Avsar. Intuition for regression, classification, clustering — and where they break." },
-  { year: "07/2019", kind: "role", title: "Product Manager", company: "Avsar HR Services", body: "Migration to a proprietary platform (₹26.4L annual savings), unified Hire-to-Retire, and a configurable ATS for high-volume hiring." },
-  { year: "12/2021", kind: "award", title: "Catalyst of Change · CY 2021", company: "Avsar HR Services", body: "For leading the in-house HRMS rollout and the cross-functional adoption that made it stick." },
-  { year: "04/2022", kind: "role", title: "Python Developer", company: "Lokyata", body: "Credit-union API integrations and Python/SQL ETL pipelines for large-scale data processing." },
-  { year: "05/2023", kind: "role", title: "Co-founder", company: "Zunction.in", body: "A 0→1 EdTech ecosystem around shared infrastructure for edupreneurs. 8 B2B subleasing partnerships." },
-  { year: "12/2023", kind: "role", title: "Product Manager", company: "Avsar HR Services", body: "Productized the internal platform into HR10X — 12 enterprise customers and 35K+ client employees in year one." },
-  { year: "06/2025", kind: "role", title: "Senior Product Manager", company: "Quess Corp Limited", body: "Productized payroll into the Hamara Suite — configurable cycles, AI-assisted upload mapping across 7 workflows, 26 enterprise SaaS customers in a year." },
-  { year: "01/2026", kind: "award", title: "Standout Performer · Q3 FY2025–26", company: "Quess Corp Limited", body: "For driving high-impact product initiatives and business-focused outcomes on the Hamara Suite." },
+  {
+    year: "2012",
+    kind: "edu",
+    title: "Class X — 85.6%",
+    company: "MP Board",
+    body: "Where showing up early and finishing the paper first became a habit.",
+  },
+  {
+    year: "2014",
+    kind: "edu",
+    title: "Class XII — 86.6%",
+    company: "MP Board",
+    body: "PCM. The runway into JEE Advanced and engineering.",
+  },
+  {
+    year: "2015",
+    kind: "cert",
+    title: "JEE Advanced · AIR 7151",
+    body: "The entrance exam that opened the first door to NIT, Bhopal.",
+  },
+  {
+    year: "2015 — 2019",
+    kind: "edu",
+    title: "B.Tech, Mechanical",
+    company: "Maulana Azad NIT, Bhopal",
+    body: "Engineering opened the first door. The years after turned into operations, code, product, and a taste for systems.",
+  },
+  {
+    year: "2016",
+    kind: "cert",
+    title: "Trading Certificate · Taking Forward",
+    body: "Skin in the game. Risk, position sizing, and the difference between opinion and conviction.",
+  },
+  {
+    year: "2019",
+    kind: "cert",
+    title: "Machine Learning A–Z · Udemy",
+    body: "Picked up in college, before Avsar. Intuition for regression, classification, clustering — and where they break.",
+  },
+  {
+    year: "07/2019",
+    kind: "role",
+    title: "Product Manager",
+    company: "Avsar HR Services",
+    body: "Migration to a proprietary platform (₹26.4L annual savings), unified Hire-to-Retire, and a configurable ATS for high-volume hiring.",
+  },
+  {
+    year: "12/2021",
+    kind: "award",
+    title: "Catalyst of Change · CY 2021",
+    company: "Avsar HR Services",
+    body: "For leading the in-house HRMS rollout and the cross-functional adoption that made it stick.",
+  },
+  {
+    year: "04/2022",
+    kind: "role",
+    title: "Python Developer",
+    company: "Lokyata",
+    body: "Credit-union API integrations and Python/SQL ETL pipelines for large-scale data processing.",
+  },
+  {
+    year: "05/2023",
+    kind: "role",
+    title: "Co-founder",
+    company: "Zunction.in",
+    body: "A 0→1 EdTech ecosystem around shared infrastructure for edupreneurs. 8 B2B subleasing partnerships.",
+  },
+  {
+    year: "12/2023",
+    kind: "role",
+    title: "Product Manager",
+    company: "Avsar HR Services",
+    body: "Productized the internal platform into HR10X — 12 enterprise customers and 35K+ client employees in year one.",
+  },
+  {
+    year: "06/2025",
+    kind: "role",
+    title: "Senior Product Manager",
+    company: "Quess Corp Limited",
+    body: "Productized payroll into the Hamara Suite — configurable cycles, AI-assisted upload mapping across 7 workflows, 26 enterprise SaaS customers in a year.",
+  },
+  {
+    year: "01/2026",
+    kind: "award",
+    title: "Standout Performer · Q3 FY2025–26",
+    company: "Quess Corp Limited",
+    body: "For driving high-impact product initiatives and business-focused outcomes on the Hamara Suite.",
+  },
 ];
 
-const kindStyles: Record<MilestoneKind, { dot: string; border: string; label: string; chip: string }> = {
-  role: { dot: "bg-terracotta", border: "border-terracotta", label: "Role", chip: "bg-terracotta/15 text-terracotta" },
-  award: { dot: "bg-amber-400", border: "border-amber-400", label: "Award", chip: "bg-amber-400/15 text-amber-300" },
-  cert: { dot: "bg-ivory/70", border: "border-ivory/60", label: "Certification", chip: "bg-ivory/10 text-ivory/80" },
+const kindStyles: Record<
+  MilestoneKind,
+  { dot: string; border: string; label: string; chip: string }
+> = {
+  role: {
+    dot: "bg-terracotta",
+    border: "border-terracotta",
+    label: "Role",
+    chip: "bg-terracotta/15 text-terracotta",
+  },
+  award: {
+    dot: "bg-amber-400",
+    border: "border-amber-400",
+    label: "Award",
+    chip: "bg-amber-400/15 text-amber-300",
+  },
+  cert: {
+    dot: "bg-ivory/70",
+    border: "border-ivory/60",
+    label: "Certification",
+    chip: "bg-ivory/10 text-ivory/80",
+  },
   edu: { dot: "bg-leaf", border: "border-leaf", label: "Education", chip: "bg-leaf/15 text-leaf" },
 };
 
@@ -186,15 +275,15 @@ function Home() {
           Himanshu Tiwari · Senior Product Manager
         </div>
         <h1 className="max-w-5xl font-serif text-5xl leading-[1.02] tracking-tight text-balance lg:text-[6.5rem]">
-          I build products around <em className="not-italic text-terracotta">messy real-world</em> problems.
+          I build products around <em className="not-italic text-terracotta">messy real-world</em>{" "}
+          problems.
         </h1>
 
         <div className="mt-14 grid gap-10 lg:grid-cols-2 lg:gap-24">
           <div className="max-w-[52ch]">
             <p className="text-lg leading-relaxed text-charcoal/80 text-pretty lg:text-xl">
-              Senior Product Manager working across enterprise platforms, SaaS,
-              complex workflow products, product modernization, and
-              AI-assisted workflows.
+              Senior Product Manager working across enterprise platforms, SaaS, complex workflow
+              products, product modernization, and AI-assisted workflows.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -214,10 +303,9 @@ function Home() {
           </div>
           <div className="max-w-[52ch] border-t border-charcoal/15 pt-6 lg:border-t-0 lg:border-l lg:pt-1 lg:pl-10">
             <p className="font-serif text-lg italic leading-relaxed text-charcoal/70 text-pretty lg:text-xl">
-              I also spend an unreasonable amount of time thinking about
-              economics, technology, work, agriculture, incentives, and other
-              systems. Occasionally I write about them. Apparently, my
-              friends started calling me Kaka for a reason.
+              I also spend an unreasonable amount of time thinking about economics, technology,
+              work, agriculture, incentives, and other systems. Occasionally I write about them.
+              Apparently, my friends started calling me Kaka for a reason.
             </p>
           </div>
         </div>
@@ -229,10 +317,9 @@ function Home() {
                 key={k}
                 className="pr-16 text-xs font-medium uppercase tracking-[0.25em] text-charcoal/45"
               >
-                Currently thinking about &nbsp;·&nbsp; AI and work &nbsp;·&nbsp;
-                Indian agriculture &nbsp;·&nbsp; enterprise UX &nbsp;·&nbsp;
-                incentives &nbsp;·&nbsp; inequality &nbsp;·&nbsp; social
-                products &nbsp;·&nbsp;
+                Currently thinking about &nbsp;·&nbsp; AI and work &nbsp;·&nbsp; Indian agriculture
+                &nbsp;·&nbsp; enterprise UX &nbsp;·&nbsp; incentives &nbsp;·&nbsp; inequality
+                &nbsp;·&nbsp; social products &nbsp;·&nbsp;
               </span>
             ))}
           </div>
@@ -251,12 +338,8 @@ function Home() {
           <div className="mt-14 grid gap-x-12 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
             {capabilities.map((c) => (
               <div key={c.label}>
-                <h3 className="mb-2 text-sm font-semibold uppercase tracking-widest">
-                  {c.label}
-                </h3>
-                <p className="max-w-[38ch] text-sm leading-relaxed text-charcoal/70">
-                  {c.body}
-                </p>
+                <h3 className="mb-2 text-sm font-semibold uppercase tracking-widest">{c.label}</h3>
+                <p className="max-w-[38ch] text-sm leading-relaxed text-charcoal/70">{c.body}</p>
               </div>
             ))}
           </div>
@@ -284,10 +367,7 @@ function Home() {
           </div>
           <div className="grid gap-x-12 gap-y-16 md:grid-cols-2">
             {caseStudies.map((c, i) => (
-              <article
-                key={c.n}
-                className={`group ${i % 2 === 1 ? "md:pt-16" : ""}`}
-              >
+              <article key={c.n} className={`group ${i % 2 === 1 ? "md:pt-16" : ""}`}>
                 <div className="mb-6 flex items-baseline justify-between">
                   <span className="font-mono text-[11px] uppercase tracking-widest text-terracotta">
                     Case study · {c.n}
@@ -299,9 +379,7 @@ function Home() {
                 <h3 className="font-serif text-2xl leading-snug text-balance transition-colors group-hover:text-terracotta lg:text-3xl">
                   {c.title}
                 </h3>
-                <p className="mt-2 font-serif text-base italic text-charcoal/60">
-                  {c.subtitle}
-                </p>
+                <p className="mt-2 font-serif text-base italic text-charcoal/60">{c.subtitle}</p>
                 <p className="mt-4 font-serif text-lg italic text-charcoal/75 text-pretty">
                   &ldquo;{c.question}&rdquo;
                 </p>
@@ -345,15 +423,9 @@ function Home() {
                     {s.tag}
                   </span>
                 </div>
-                <h3 className="font-serif text-3xl leading-tight text-balance">
-                  {s.title}
-                </h3>
-                <p className="font-serif text-lg italic text-ivory/70">
-                  {s.subtitle}
-                </p>
-                <p className="max-w-[52ch] text-base leading-relaxed text-ivory/70">
-                  {s.body}
-                </p>
+                <h3 className="font-serif text-3xl leading-tight text-balance">{s.title}</h3>
+                <p className="font-serif text-lg italic text-ivory/70">{s.subtitle}</p>
+                <p className="max-w-[52ch] text-base leading-relaxed text-ivory/70">{s.body}</p>
               </div>
             ))}
           </div>
@@ -390,10 +462,17 @@ function Home() {
                   <p className="mb-6 font-serif text-lg italic text-charcoal/70 text-pretty">
                     &ldquo;{e.question}&rdquo;
                   </p>
-                  <p className="text-sm leading-relaxed text-charcoal/70">
-                    {e.reflection}
-                  </p>
+                  <p className="text-sm leading-relaxed text-charcoal/70">{e.reflection}</p>
                 </div>
+                {e.name === "Zunction.in" ? (
+                  <Link
+                    to="/zunction"
+                    className="mt-6 inline-flex w-fit items-center gap-2 text-sm font-medium text-charcoal underline decoration-marigold/60 underline-offset-4 hover:decoration-marigold"
+                  >
+                    Read the full case study
+                    <ArrowUpRight className="size-4" />
+                  </Link>
+                ) : null}
                 <div className="mt-8 text-[11px] font-semibold uppercase tracking-[0.2em] text-marigold">
                   {e.tag}
                 </div>
@@ -431,12 +510,8 @@ function Home() {
                 <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-leaf">
                   {idea.kind}
                 </span>
-                <h4 className="mt-4 font-serif text-xl leading-snug text-pretty">
-                  {idea.q}
-                </h4>
-                <span className="mt-6 text-xs font-medium text-charcoal/50">
-                  Read →
-                </span>
+                <h4 className="mt-4 font-serif text-xl leading-snug text-pretty">{idea.q}</h4>
+                <span className="mt-6 text-xs font-medium text-charcoal/50">Read →</span>
               </article>
             ))}
           </div>
@@ -532,17 +607,16 @@ function Home() {
             <article className="border-l-2 border-coral pl-6">
               <h3 className="font-serif text-2xl">The weight-loss journey</h3>
               <p className="mt-4 max-w-[52ch] text-sm leading-relaxed text-charcoal/75">
-                A slow, unglamorous story about failed attempts, environment
-                design, and the difference between motivation and consistency.
-                The change wasn't the goal — maintenance was.
+                A slow, unglamorous story about failed attempts, environment design, and the
+                difference between motivation and consistency. The change wasn't the goal —
+                maintenance was.
               </p>
             </article>
             <article className="border-l-2 border-coral pl-6">
               <h3 className="font-serif text-2xl">Equality begins at home</h3>
               <p className="mt-4 max-w-[52ch] text-sm leading-relaxed text-charcoal/75">
-                A story about advocating for my sister's equal property rights.
-                Beliefs are cheap until they require a difficult conversation
-                with the people you love.
+                A story about advocating for my sister's equal property rights. Beliefs are cheap
+                until they require a difficult conversation with the people you love.
               </p>
             </article>
           </div>
@@ -647,28 +721,9 @@ function Home() {
                         {style.label}
                       </span>
                     </div>
-                    <h4 className="mt-2 font-serif text-xl leading-snug text-ivory">
-                      {m.title}
-                    </h4>
+                    <h4 className="mt-2 font-serif text-xl leading-snug text-ivory">{m.title}</h4>
                     {m.company ? (
-                      <p className="mt-1 text-sm font-medium text-terracotta">
-                        {m.company}
-                      </p>
+                      <p className="mt-1 text-sm font-medium text-terracotta">{m.company}</p>
                     ) : null}
                     <p
-                      className={`mt-2 text-sm leading-relaxed text-ivory/65 ${
-                        isRight ? "md:ml-0" : "md:ml-auto"
-                      } max-w-[52ch]`}
-                    >
-                      {m.body}
-                    </p>
-                  </div>
-                </li>
-              );
-            })}
-          </ol>
-        </div>
-      </section>
-    </div>
-  );
-}
+                      className={`mt-2 text-sm leading-relaxed text-ivory/65 $
