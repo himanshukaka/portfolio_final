@@ -4,13 +4,13 @@ import { PageHeader } from "../components/page-header";
 export const Route = createFileRoute("/experiments")({
   head: () => ({
     meta: [
-      { title: "Experiments — Himanshu Tiwari" },
+      { title: "Startups — Himanshu Tiwari" },
       {
         name: "description",
         content:
           "Ventures, prototypes, and startup attempts. Some became products. Some became lessons. Both mattered.",
       },
-      { property: "og:title", content: "Experiments — Himanshu Tiwari" },
+      { property: "og:title", content: "Startups — Himanshu Tiwari" },
       {
         property: "og:description",
         content:
@@ -46,6 +46,7 @@ const experiments = [
         p: "Social mechanics can amplify motivation that already exists. They cannot create it. Distribution and community pre-existed the product, not the other way around.",
       },
     ],
+    cta: { label: "Open CohortUp", to: "/cohortup" },
   },
   {
     name: "Zunction.in",
@@ -71,6 +72,85 @@ const experiments = [
         p: "Verify distribution cost before building the technology. Real estate marketplaces are not software problems in disguise.",
       },
     ],
+    cta: { label: "Read Zunction", to: "/zunction" },
+  },
+  {
+    name: "Phone a Friend",
+    year: "Concept · 2026",
+    kind: "AI copilot · Product concept",
+    hypothesis:
+      "That important conversations can feel less fragile when an AI assistant listens, understands context, and quietly suggests the next best response.",
+    story: [
+      {
+        h: "The opportunity",
+        p: "Recruiting, sales, support, negotiations, and investor calls all share the same problem: people have to think, remember, and respond in real time under pressure.",
+      },
+      {
+        h: "What the concept does",
+        p: "It listens to the conversation, retrieves context, detects risk, and suggests what to ask or say next without turning the call into a chat interface.",
+      },
+      {
+        h: "Why it is a concept",
+        p: "The technical and regulatory constraints are real. Permission, consent, call recording policy, mobile OS restrictions, and enterprise trust all shape what is possible.",
+      },
+      {
+        h: "What it taught me",
+        p: "The product story is stronger when framed as a concept. Strategic ideas do not need fake shipped-product language to be credible.",
+      },
+    ],
+    cta: { label: "View Concept", to: "/phone_of_friend" },
+  },
+  {
+    name: "Reimagining Indian Agriculture",
+    year: "Thesis · 2026",
+    kind: "Long-term thesis",
+    hypothesis:
+      "That Indian agriculture is constrained less by inputs than by the lack of structural capital and institutional layers.",
+    story: [
+      {
+        h: "The problem",
+        p: "Farmers face fragmented landholdings, volatile incomes, concentrated risk, and nearly complete exposure to operational uncertainty.",
+      },
+      {
+        h: "The core thesis",
+        p: "The next frontier is not just better seeds, drones, or marketplaces. It is redesigning the financial and operational architecture around farming.",
+      },
+      {
+        h: "What changes",
+        p: "New layers between capital and cultivation can let farmers retain land ownership while still participating in higher productivity and economic upside.",
+      },
+      {
+        h: "What it taught me",
+        p: "Some of the most meaningful product ideas are really institutional design questions.",
+      },
+    ],
+    cta: { label: "Open Thesis", to: "/reimagining_indian_agriculture" },
+  },
+  {
+    name: "Employee's Skin in the Game",
+    year: "Thesis · 2026",
+    kind: "Long-term thesis",
+    hypothesis:
+      "That organizations may uncover better judgment if employees can allocate conviction, not just time.",
+    story: [
+      {
+        h: "The observation",
+        p: "Different people inside a company see different parts of the same problem, but their predictions rarely compound into something measurable.",
+      },
+      {
+        h: "The premise",
+        p: "A limited pool of organizational conviction could let people express belief in outcomes the way markets express belief in prices.",
+      },
+      {
+        h: "The tension",
+        p: "The idea is attractive because it prizes judgment. It is risky because organizations can turn anything into theater.",
+      },
+      {
+        h: "What it taught me",
+        p: "Some organization problems are really questions about incentives, information, and who gets to matter.",
+      },
+    ],
+    cta: { label: "Open Thesis", to: "/employees_skin_in_the_game" },
   },
 ];
 
@@ -78,7 +158,7 @@ function ExperimentsPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Experiments"
+        eyebrow="Startups"
         eyebrowColor="text-marigold"
         title={<>Things That Didn't Work Out.</>}
         lede="Some became products. Some became lessons. The point isn't to rewrite failure as success, but to be honest about what was learned. The quality of the reflection matters more than the outcome."
@@ -109,5 +189,24 @@ function ExperimentsPage() {
                   </p>
                 </div>
               ))}
-              {e.name === "Zunction.in" ? (
-                
+              {e.cta ? (
+                <Link
+                  to={
+                    e.cta.to as
+                      | "/zunction"
+                      | "/cohortup"
+                      | "/phone_of_friend"
+                      | "/employees_skin_in_the_game"
+                  }
+                  className="inline-flex items-center justify-center rounded-full bg-charcoal px-5 py-3 text-sm font-medium text-ivory transition-colors hover:bg-charcoal/85"
+                >
+                  {e.cta.label}
+                </Link>
+              ) : null}
+            </div>
+          </article>
+        ))}
+      </div>
+    </>
+  );
+}

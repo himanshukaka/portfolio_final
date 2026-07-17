@@ -18,10 +18,17 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/work", changefreq: "monthly", priority: "0.9" },
           { path: "/cohortup", changefreq: "monthly", priority: "0.8" },
           { path: "/experiments", changefreq: "monthly", priority: "0.8" },
-          { path: "/questions", changefreq: "weekly", priority: "0.8" },
-          { path: "/writing", changefreq: "weekly", priority: "0.8" },
+          { path: "/ux_notes", changefreq: "weekly", priority: "0.8" },
+          { path: "/recruiters_live_in_excel", changefreq: "monthly", priority: "0.7" },
+          { path: "/bilaspur_diaries", changefreq: "monthly", priority: "0.7" },
+          { path: "/cafes_human_behaviour", changefreq: "monthly", priority: "0.7" },
+          { path: "/bulk_paste_filtering", changefreq: "monthly", priority: "0.7" },
+          { path: "/online_writing", changefreq: "weekly", priority: "0.8" },
+          { path: "/phone_of_friend", changefreq: "monthly", priority: "0.7" },
+          { path: "/reimagining_indian_agriculture", changefreq: "monthly", priority: "0.7" },
+          { path: "/employees_skin_in_the_game", changefreq: "monthly", priority: "0.7" },
           { path: "/life", changefreq: "monthly", priority: "0.6" },
-          { path: "/about", changefreq: "monthly", priority: "0.7" },
+          { path: "/career", changefreq: "monthly", priority: "0.7" },
         ];
         const urls = entries
           .map(

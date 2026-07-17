@@ -10,13 +10,22 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ZunctionRouteImport } from './routes/zunction'
-import { Route as WritingRouteImport } from './routes/writing'
 import { Route as WorkRouteImport } from './routes/work'
+import { Route as Ux_notesRouteImport } from './routes/ux_notes'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as QuestionsRouteImport } from './routes/questions'
+import { Route as Reimagining_indian_agricultureRouteImport } from './routes/reimagining_indian_agriculture'
+import { Route as Recruiters_live_in_excelRouteImport } from './routes/recruiters_live_in_excel'
+import { Route as Phone_of_friendRouteImport } from './routes/phone_of_friend'
+import { Route as Phone_a_friendRouteImport } from './routes/phone_a_friend'
+import { Route as Online_writingRouteImport } from './routes/online_writing'
 import { Route as LifeRouteImport } from './routes/life'
 import { Route as ExperimentsRouteImport } from './routes/experiments'
+import { Route as Employees_skin_in_the_gameRouteImport } from './routes/employees_skin_in_the_game'
 import { Route as CohortupRouteImport } from './routes/cohortup'
+import { Route as CareerRouteImport } from './routes/career'
+import { Route as Cafes_human_behaviourRouteImport } from './routes/cafes_human_behaviour'
+import { Route as Bulk_paste_filteringRouteImport } from './routes/bulk_paste_filtering'
+import { Route as Bilaspur_diariesRouteImport } from './routes/bilaspur_diaries'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -25,14 +34,14 @@ const ZunctionRoute = ZunctionRouteImport.update({
   path: '/zunction',
   getParentRoute: () => rootRouteImport,
 } as any)
-const WritingRoute = WritingRouteImport.update({
-  id: '/writing',
-  path: '/writing',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const WorkRoute = WorkRouteImport.update({
   id: '/work',
   path: '/work',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Ux_notesRoute = Ux_notesRouteImport.update({
+  id: '/ux_notes',
+  path: '/ux_notes',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -40,9 +49,31 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
-const QuestionsRoute = QuestionsRouteImport.update({
-  id: '/questions',
-  path: '/questions',
+const Reimagining_indian_agricultureRoute =
+  Reimagining_indian_agricultureRouteImport.update({
+    id: '/reimagining_indian_agriculture',
+    path: '/reimagining_indian_agriculture',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const Recruiters_live_in_excelRoute =
+  Recruiters_live_in_excelRouteImport.update({
+    id: '/recruiters_live_in_excel',
+    path: '/recruiters_live_in_excel',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const Phone_of_friendRoute = Phone_of_friendRouteImport.update({
+  id: '/phone_of_friend',
+  path: '/phone_of_friend',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Phone_a_friendRoute = Phone_a_friendRouteImport.update({
+  id: '/phone_a_friend',
+  path: '/phone_a_friend',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Online_writingRoute = Online_writingRouteImport.update({
+  id: '/online_writing',
+  path: '/online_writing',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LifeRoute = LifeRouteImport.update({
@@ -55,9 +86,35 @@ const ExperimentsRoute = ExperimentsRouteImport.update({
   path: '/experiments',
   getParentRoute: () => rootRouteImport,
 } as any)
+const Employees_skin_in_the_gameRoute =
+  Employees_skin_in_the_gameRouteImport.update({
+    id: '/employees_skin_in_the_game',
+    path: '/employees_skin_in_the_game',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const CohortupRoute = CohortupRouteImport.update({
   id: '/cohortup',
   path: '/cohortup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CareerRoute = CareerRouteImport.update({
+  id: '/career',
+  path: '/career',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Cafes_human_behaviourRoute = Cafes_human_behaviourRouteImport.update({
+  id: '/cafes_human_behaviour',
+  path: '/cafes_human_behaviour',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Bulk_paste_filteringRoute = Bulk_paste_filteringRouteImport.update({
+  id: '/bulk_paste_filtering',
+  path: '/bulk_paste_filtering',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Bilaspur_diariesRoute = Bilaspur_diariesRouteImport.update({
+  id: '/bilaspur_diaries',
+  path: '/bilaspur_diaries',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -74,38 +131,65 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/bilaspur_diaries': typeof Bilaspur_diariesRoute
+  '/bulk_paste_filtering': typeof Bulk_paste_filteringRoute
+  '/cafes_human_behaviour': typeof Cafes_human_behaviourRoute
+  '/career': typeof CareerRoute
   '/cohortup': typeof CohortupRoute
+  '/employees_skin_in_the_game': typeof Employees_skin_in_the_gameRoute
   '/experiments': typeof ExperimentsRoute
   '/life': typeof LifeRoute
-  '/questions': typeof QuestionsRoute
+  '/online_writing': typeof Online_writingRoute
+  '/phone_a_friend': typeof Phone_a_friendRoute
+  '/phone_of_friend': typeof Phone_of_friendRoute
+  '/recruiters_live_in_excel': typeof Recruiters_live_in_excelRoute
+  '/reimagining_indian_agriculture': typeof Reimagining_indian_agricultureRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/ux_notes': typeof Ux_notesRoute
   '/work': typeof WorkRoute
-  '/writing': typeof WritingRoute
   '/zunction': typeof ZunctionRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/bilaspur_diaries': typeof Bilaspur_diariesRoute
+  '/bulk_paste_filtering': typeof Bulk_paste_filteringRoute
+  '/cafes_human_behaviour': typeof Cafes_human_behaviourRoute
+  '/career': typeof CareerRoute
   '/cohortup': typeof CohortupRoute
+  '/employees_skin_in_the_game': typeof Employees_skin_in_the_gameRoute
   '/experiments': typeof ExperimentsRoute
   '/life': typeof LifeRoute
-  '/questions': typeof QuestionsRoute
+  '/online_writing': typeof Online_writingRoute
+  '/phone_a_friend': typeof Phone_a_friendRoute
+  '/phone_of_friend': typeof Phone_of_friendRoute
+  '/recruiters_live_in_excel': typeof Recruiters_live_in_excelRoute
+  '/reimagining_indian_agriculture': typeof Reimagining_indian_agricultureRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/ux_notes': typeof Ux_notesRoute
   '/work': typeof WorkRoute
-  '/writing': typeof WritingRoute
   '/zunction': typeof ZunctionRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/bilaspur_diaries': typeof Bilaspur_diariesRoute
+  '/bulk_paste_filtering': typeof Bulk_paste_filteringRoute
+  '/cafes_human_behaviour': typeof Cafes_human_behaviourRoute
+  '/career': typeof CareerRoute
   '/cohortup': typeof CohortupRoute
+  '/employees_skin_in_the_game': typeof Employees_skin_in_the_gameRoute
   '/experiments': typeof ExperimentsRoute
   '/life': typeof LifeRoute
-  '/questions': typeof QuestionsRoute
+  '/online_writing': typeof Online_writingRoute
+  '/phone_a_friend': typeof Phone_a_friendRoute
+  '/phone_of_friend': typeof Phone_of_friendRoute
+  '/recruiters_live_in_excel': typeof Recruiters_live_in_excelRoute
+  '/reimagining_indian_agriculture': typeof Reimagining_indian_agricultureRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/ux_notes': typeof Ux_notesRoute
   '/work': typeof WorkRoute
-  '/writing': typeof WritingRoute
   '/zunction': typeof ZunctionRoute
 }
 export interface FileRouteTypes {
@@ -113,50 +197,86 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/bilaspur_diaries'
+    | '/bulk_paste_filtering'
+    | '/cafes_human_behaviour'
+    | '/career'
     | '/cohortup'
+    | '/employees_skin_in_the_game'
     | '/experiments'
     | '/life'
-    | '/questions'
+    | '/online_writing'
+    | '/phone_a_friend'
+    | '/phone_of_friend'
+    | '/recruiters_live_in_excel'
+    | '/reimagining_indian_agriculture'
     | '/sitemap.xml'
+    | '/ux_notes'
     | '/work'
-    | '/writing'
     | '/zunction'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
+    | '/bilaspur_diaries'
+    | '/bulk_paste_filtering'
+    | '/cafes_human_behaviour'
+    | '/career'
     | '/cohortup'
+    | '/employees_skin_in_the_game'
     | '/experiments'
     | '/life'
-    | '/questions'
+    | '/online_writing'
+    | '/phone_a_friend'
+    | '/phone_of_friend'
+    | '/recruiters_live_in_excel'
+    | '/reimagining_indian_agriculture'
     | '/sitemap.xml'
+    | '/ux_notes'
     | '/work'
-    | '/writing'
     | '/zunction'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/bilaspur_diaries'
+    | '/bulk_paste_filtering'
+    | '/cafes_human_behaviour'
+    | '/career'
     | '/cohortup'
+    | '/employees_skin_in_the_game'
     | '/experiments'
     | '/life'
-    | '/questions'
+    | '/online_writing'
+    | '/phone_a_friend'
+    | '/phone_of_friend'
+    | '/recruiters_live_in_excel'
+    | '/reimagining_indian_agriculture'
     | '/sitemap.xml'
+    | '/ux_notes'
     | '/work'
-    | '/writing'
     | '/zunction'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  Bilaspur_diariesRoute: typeof Bilaspur_diariesRoute
+  Bulk_paste_filteringRoute: typeof Bulk_paste_filteringRoute
+  Cafes_human_behaviourRoute: typeof Cafes_human_behaviourRoute
+  CareerRoute: typeof CareerRoute
   CohortupRoute: typeof CohortupRoute
+  Employees_skin_in_the_gameRoute: typeof Employees_skin_in_the_gameRoute
   ExperimentsRoute: typeof ExperimentsRoute
   LifeRoute: typeof LifeRoute
-  QuestionsRoute: typeof QuestionsRoute
+  Online_writingRoute: typeof Online_writingRoute
+  Phone_a_friendRoute: typeof Phone_a_friendRoute
+  Phone_of_friendRoute: typeof Phone_of_friendRoute
+  Recruiters_live_in_excelRoute: typeof Recruiters_live_in_excelRoute
+  Reimagining_indian_agricultureRoute: typeof Reimagining_indian_agricultureRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  Ux_notesRoute: typeof Ux_notesRoute
   WorkRoute: typeof WorkRoute
-  WritingRoute: typeof WritingRoute
   ZunctionRoute: typeof ZunctionRoute
 }
 
@@ -169,18 +289,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ZunctionRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/writing': {
-      id: '/writing'
-      path: '/writing'
-      fullPath: '/writing'
-      preLoaderRoute: typeof WritingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/work': {
       id: '/work'
       path: '/work'
       fullPath: '/work'
       preLoaderRoute: typeof WorkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ux_notes': {
+      id: '/ux_notes'
+      path: '/ux_notes'
+      fullPath: '/ux_notes'
+      preLoaderRoute: typeof Ux_notesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -190,11 +310,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/questions': {
-      id: '/questions'
-      path: '/questions'
-      fullPath: '/questions'
-      preLoaderRoute: typeof QuestionsRouteImport
+    '/reimagining_indian_agriculture': {
+      id: '/reimagining_indian_agriculture'
+      path: '/reimagining_indian_agriculture'
+      fullPath: '/reimagining_indian_agriculture'
+      preLoaderRoute: typeof Reimagining_indian_agricultureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/recruiters_live_in_excel': {
+      id: '/recruiters_live_in_excel'
+      path: '/recruiters_live_in_excel'
+      fullPath: '/recruiters_live_in_excel'
+      preLoaderRoute: typeof Recruiters_live_in_excelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/phone_of_friend': {
+      id: '/phone_of_friend'
+      path: '/phone_of_friend'
+      fullPath: '/phone_of_friend'
+      preLoaderRoute: typeof Phone_of_friendRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/phone_a_friend': {
+      id: '/phone_a_friend'
+      path: '/phone_a_friend'
+      fullPath: '/phone_a_friend'
+      preLoaderRoute: typeof Phone_a_friendRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/online_writing': {
+      id: '/online_writing'
+      path: '/online_writing'
+      fullPath: '/online_writing'
+      preLoaderRoute: typeof Online_writingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/life': {
@@ -211,11 +359,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExperimentsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/employees_skin_in_the_game': {
+      id: '/employees_skin_in_the_game'
+      path: '/employees_skin_in_the_game'
+      fullPath: '/employees_skin_in_the_game'
+      preLoaderRoute: typeof Employees_skin_in_the_gameRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/cohortup': {
       id: '/cohortup'
       path: '/cohortup'
       fullPath: '/cohortup'
       preLoaderRoute: typeof CohortupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/career': {
+      id: '/career'
+      path: '/career'
+      fullPath: '/career'
+      preLoaderRoute: typeof CareerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cafes_human_behaviour': {
+      id: '/cafes_human_behaviour'
+      path: '/cafes_human_behaviour'
+      fullPath: '/cafes_human_behaviour'
+      preLoaderRoute: typeof Cafes_human_behaviourRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bulk_paste_filtering': {
+      id: '/bulk_paste_filtering'
+      path: '/bulk_paste_filtering'
+      fullPath: '/bulk_paste_filtering'
+      preLoaderRoute: typeof Bulk_paste_filteringRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bilaspur_diaries': {
+      id: '/bilaspur_diaries'
+      path: '/bilaspur_diaries'
+      fullPath: '/bilaspur_diaries'
+      preLoaderRoute: typeof Bilaspur_diariesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -238,13 +421,22 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  Bilaspur_diariesRoute: Bilaspur_diariesRoute,
+  Bulk_paste_filteringRoute: Bulk_paste_filteringRoute,
+  Cafes_human_behaviourRoute: Cafes_human_behaviourRoute,
+  CareerRoute: CareerRoute,
   CohortupRoute: CohortupRoute,
+  Employees_skin_in_the_gameRoute: Employees_skin_in_the_gameRoute,
   ExperimentsRoute: ExperimentsRoute,
   LifeRoute: LifeRoute,
-  QuestionsRoute: QuestionsRoute,
+  Online_writingRoute: Online_writingRoute,
+  Phone_a_friendRoute: Phone_a_friendRoute,
+  Phone_of_friendRoute: Phone_of_friendRoute,
+  Recruiters_live_in_excelRoute: Recruiters_live_in_excelRoute,
+  Reimagining_indian_agricultureRoute: Reimagining_indian_agricultureRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  Ux_notesRoute: Ux_notesRoute,
   WorkRoute: WorkRoute,
-  WritingRoute: WritingRoute,
   ZunctionRoute: ZunctionRoute,
 }
 export const routeTree = rootRouteImport

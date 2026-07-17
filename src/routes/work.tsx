@@ -38,18 +38,6 @@ const featured = [
   },
   {
     n: "02",
-    title: "How Do You Turn Seven Fragmented Journeys Into One Coherent System?",
-    question:
-      "How do you design lifecycle workflows around a shared Assignment ID architecture?",
-    tag: "Zero to One · Systems",
-    themes: [
-      "Workflow architecture across many stakeholders",
-      "Build-vs-buy at each layer of the stack",
-      "Sequencing scope to earn the right to keep building",
-    ],
-  },
-  {
-    n: "03",
     title: "What Breaks When Internal Software Becomes SaaS?",
     question:
       "What breaks when software built for one organization has to serve many?",
@@ -61,7 +49,7 @@ const featured = [
     ],
   },
   {
-    n: "04",
+    n: "03",
     title: "Modernizing a System That Cannot Afford to Fail",
     question:
       "How do you modernize a rigid system without disrupting the operation it runs?",

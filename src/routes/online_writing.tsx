@@ -2,16 +2,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { PageHeader } from "../components/page-header";
 
-export const Route = createFileRoute("/writing")({
+export const Route = createFileRoute("/online_writing")({
   head: () => ({
     meta: [
-      { title: "Writing — Himanshu Tiwari" },
+      { title: "Online Writing — Himanshu Tiwari" },
       {
         name: "description",
         content:
           "Essays from Tenets of 21st Century on Substack — EdTech, hiring, agriculture, economy, and rural India.",
       },
-      { property: "og:title", content: "Writing — Himanshu Tiwari" },
+      { property: "og:title", content: "Online Writing — Himanshu Tiwari" },
       {
         property: "og:description",
         content:
@@ -34,8 +34,6 @@ export interface Post {
   title: string;
   url: string;
   interests: Interest[];
-  // Higher = more relevant to Himanshu's core themes. Used for the
-  // default "Most relevant first" sort.
   relevance: number;
 }
 
@@ -185,15 +183,32 @@ const INTERESTS: Interest[] = [
 
 type SortKey = "relevance" | "title";
 
+const twitterNotes = [
+  {
+    tag: "Systems",
+    text: "Most product failures are incentive failures with a nicer interface.",
+  },
+  {
+    tag: "Marketplaces",
+    text: "A narrow middle segment can be a sharp insight and a weak business at the same time.",
+  },
+  {
+    tag: "Startups",
+    text: "The best customer interview is the one that changes the company, not the slide deck.",
+  },
+  {
+    tag: "Writing",
+    text: "Short notes are often where the thesis appears before the essay does.",
+  },
+];
+
 function WritingPage() {
   const [filter, setFilter] = useState<Interest | "All">("All");
   const [sort, setSort] = useState<SortKey>("relevance");
 
   const visible = useMemo(() => {
     const filtered =
-      filter === "All"
-        ? [...posts]
-        : posts.filter((p) => p.interests.includes(filter));
+      filter === "All" ? [...posts] : posts.filter((p) => p.interests.includes(filter));
     if (sort === "title") {
       filtered.sort((a, b) => a.title.localeCompare(b.title));
     } else {
@@ -205,13 +220,12 @@ function WritingPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Writing"
+        eyebrow="Online Writing"
         eyebrowColor="text-lavender"
         title={<>I write to understand.</>}
         lede="Essays live on Tenets of 21st Century (moderntenets.substack.com) — on EdTech, hiring, agriculture, economy, rural India, and the institutions in between."
       />
 
-      {/* Tenets of 21st Century — Substack essays */}
       <section id="tenets" className="mx-auto max-w-6xl px-6 pb-24">
         <div className="mb-8 flex flex-wrap items-baseline justify-between gap-4 border-b border-lavender/20 pb-4">
           <div>
@@ -232,7 +246,6 @@ function WritingPage() {
           </a>
         </div>
 
-        {/* Controls */}
         <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div className="flex flex-wrap gap-2">
             {(["All", ...INTERESTS] as const).map((tag) => {
@@ -299,22 +312,54 @@ function WritingPage() {
         </div>
       </section>
 
+      <section className="border-t border-charcoal/10 bg-secondary/30 py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div>
+              <div className="text-[11px] font-semibold uppercase tracking-[0.25em] text-terracotta">
+                Twitter writing
+              </div>
+              <h2 className="mt-3 font-serif text-3xl leading-tight text-balance lg:text-4xl">
+                Short notes, same line of thought.
+              </h2>
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-charcoal/70 text-pretty">
+                A lighter feed for ideas that belong on X, but still want structure and context
+                here.
+              </p>
+            </div>
+            <a
+              href="https://x.com/_kaalik"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center rounded-full border border-charcoal/15 bg-white px-4 py-2 text-sm font-medium text-charcoal transition-colors hover:border-terracotta hover:text-terracotta"
+            >
+              Visit @kaalik on X
+            </a>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {twitterNotes.map((note) => (
+              <article
+                key={note.text}
+                className="rounded-[24px] border border-charcoal/10 bg-white p-5 shadow-[0_12px_40px_rgba(15,23,42,0.04)]"
+              >
+                <div className="text-[10px] font-semibold uppercase tracking-[0.22em] text-terracotta">
+                  {note.tag}
+                </div>
+                <p className="mt-4 font-serif text-2xl leading-tight text-charcoal">{note.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }
 
-// Substack per-post iframe embed URL, e.g.
-//   https://moderntenets.substack.com/p/understanding-edtech
-// -> https://moderntenets.substack.com/embed/p/understanding-edtech
-// The iframe renders a rich card with the post's cover image, title,
-// subtitle, publication, and Subscribe/Like/Reply/Share controls.
 function substackEmbedUrl(postUrl: string): string {
   try {
     const u = new URL(postUrl);
-    // pathname is like "/p/<slug>"
     return `${u.origin}/embed${u.pathname}`;
   } catch {
     return postUrl;
   }
 }
-

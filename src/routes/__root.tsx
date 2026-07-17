@@ -79,10 +79,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Himanshu Tiwari — Senior Product Manager & Product Builder | Kaka, apparently." },
-      { name: "description", content: "Himanshu Tiwari — Senior Product Manager building enterprise SaaS, platform products, and AI-assisted workflows. Case studies, questions, and Tenets of 21st Century essays." },
-      { property: "og:title", content: "Himanshu Tiwari — Senior Product Manager & Product Builder" },
-      { property: "og:description", content: "Senior PM working across enterprise platforms, complex workflow products, and AI-assisted workflows. Also: economics, agriculture, incentives, and systems." },
+      {
+        title: "Himanshu Tiwari — Product thinking, systems, and long-term building",
+      },
+      {
+        name: "description",
+        content:
+          "Himanshu Tiwari studies systems, builds products, and writes about economics, incentives, and long-term product thinking.",
+      },
+      {
+        property: "og:title",
+        content: "Himanshu Tiwari — Product thinking, systems, and long-term building",
+      },
+      {
+        property: "og:description",
+        content:
+          "A premium personal website for a product thinker: case studies, essays, experiments, and a long view on how systems change.",
+      },
       { property: "og:site_name", content: "Kaka, apparently." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -97,7 +110,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap",
       },
     ],
   }),
