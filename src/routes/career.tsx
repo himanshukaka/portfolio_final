@@ -7,13 +7,12 @@ export const Route = createFileRoute("/career")({
       { title: "Career — Himanshu Tiwari" },
       {
         name: "description",
-        content:
-          "A compact career page with a timeline of roles, recognitions, and the work behind them.",
+        content: "A compact career page with a simple timeline of education, employment, and entrepreneurship.",
       },
       { property: "og:title", content: "Career — Himanshu Tiwari" },
       {
         property: "og:description",
-        content: "A clean career timeline with roles, recognitions, and a short biography.",
+        content: "A simple vertical map of education, employment, and entrepreneurship.",
       },
     ],
   }),
@@ -64,20 +63,21 @@ const career = [
     note: "Led migration from a third-party workforce platform to a proprietary enterprise platform — ₹26.4L in annual recurring savings and the foundation for later SaaS commercialization. Built a unified Hire-to-Retire platform (15K+ active employees, 3,000+ monthly hires) and a configurable ATS for high-volume blue-collar hiring (5,000+ candidates/month).",
   },
   {
-    year: "2019",
-    kind: "cert" as const,
-    role: "Machine Learning A–Z",
-    company: "Udemy",
-    location: "Certificate",
-    note: "Picked up in the final year at NIT, before joining Avsar. Built a working intuition for ML models: regression, classification, clustering, and where they break.",
+    year: "2015 — 2019",
+    kind: "education" as const,
+    role: "NIT Bhopal",
+    company: "B.Tech",
+    location: "Bhopal",
+    awards: ["Taking Forward — Trading Certificate", "Machine Learning A–Z"],
+    note: "Gave me time to reflect and understand myself and the world.",
   },
   {
-    year: "2016",
-    kind: "cert" as const,
-    role: "Taking Forward — Trading Certificate",
-    company: "Independent",
-    location: "Certificate",
-    note: "Learning to trade taught me risk, position sizing, and the difference between opinion and conviction.",
+    year: "2015",
+    kind: "education" as const,
+    role: "JEE Advanced",
+    company: "All India Rank 7151",
+    location: "India",
+    note: "The exam that opened the path to engineering.",
   },
 ];
 
@@ -87,69 +87,37 @@ function CareerPage() {
       <PageHeader
         eyebrow="Career"
         eyebrowColor="text-terracotta"
-        title={<>The work, in sequence.</>}
-        lede="A stripped-down career page with the timeline first and the quieter recognitions underneath."
+        title={
+          <>
+            Three E's of My Careeer
+          </>
+        }
+        lede="Education, Employment, and Entreprenuership"
       />
 
-      <section className="mx-auto max-w-6xl px-6 pb-16">
-        <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
-          <div className="space-y-5 text-lg leading-relaxed text-charcoal/82 text-pretty">
-            <p>
-              I'm Himanshu Tiwari. My path into product wasn't linear. Engineering taught me to
-              decompose problems. Business operations showed me that real organizations rarely
-              behave like process diagrams. Writing software taught me what technology can and
-              cannot solve. Product management gave me a place to combine those perspectives.
-            </p>
-            <p>
-              Along the way I tried building a company, built internal platforms, helped turn
-              operational software into SaaS products, worked on enterprise systems, modernized
-              business-critical platforms with AI-assisted workflows, and kept writing about
-              questions outside my job description.
-            </p>
-            <p>
-              I care about people and systems: incentives and interfaces, businesses and
-              behaviour, economics and writing.
-            </p>
-          </div>
-
-          <div className="border-t border-border pt-5 text-sm leading-relaxed text-charcoal/68">
-            <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-terracotta">
-              Quick details
-            </div>
-            <p className="mt-4">Based in Bengaluru, India.</p>
-            <p className="mt-2">Senior PM across enterprise systems and SaaS.</p>
-            <p className="mt-2">Founder-led marketplace experiment: Zunction.in.</p>
-            <p className="mt-2">Writes under Tenets of 21st Century.</p>
-            <a
-              href="/Himanshu_Tiwari_CV.pdf"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-5 inline-flex items-center gap-2 font-medium text-charcoal underline decoration-terracotta/50 underline-offset-4 hover:decoration-terracotta"
-            >
-              Preview résumé →
-            </a>
-          </div>
-        </div>
+      <section className="mx-auto max-w-6xl px-6 pb-8">
+        <a
+          href="/Himanshu_Tiwari_CV.pdf"
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-2 rounded-full border border-charcoal/10 bg-charcoal px-5 py-3 text-sm font-medium text-ivory shadow-[0_12px_30px_rgba(23,23,23,0.12)] transition-transform hover:-translate-y-0.5 hover:bg-charcoal/90"
+        >
+          Preview résumé
+          <span aria-hidden="true">→</span>
+        </a>
       </section>
 
       <section className="border-y border-border bg-secondary/30 py-20">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="mb-10">
-            <span className="mb-3 block text-[11px] font-semibold uppercase tracking-[0.25em] text-terracotta">
-              Timeline
-            </span>
-            <h2 className="font-serif text-3xl leading-tight text-balance lg:text-4xl">
-              Work history, with the timeline still visible.
-            </h2>
-          </div>
-
           <ol className="relative mx-auto max-w-4xl border-l-2 border-terracotta/25 pl-8">
             {career.map((item) => (
               <li key={`${item.year}-${item.role}`} className="relative pb-10 last:pb-0">
                 <span
                   className={
                     "absolute -left-[41px] mt-2 flex size-5 items-center justify-center rounded-full border-2 bg-ivory " +
-                    (item.kind === "award"
+                    (item.kind === "education"
+                      ? "border-sky-600"
+                      : item.kind === "award"
                       ? "border-marigold"
                       : item.kind === "cert"
                         ? "border-charcoal/55"
@@ -159,7 +127,9 @@ function CareerPage() {
                   <span
                     className={
                       "size-1.5 rounded-full " +
-                      (item.kind === "award"
+                      (item.kind === "education"
+                        ? "bg-sky-600"
+                        : item.kind === "award"
                         ? "bg-marigold"
                         : item.kind === "cert"
                           ? "bg-charcoal/70"
@@ -186,7 +156,7 @@ function CareerPage() {
                     {item.awards.map((award) => (
                       <span
                         key={award}
-                        className="inline-flex items-center rounded-full border border-terracotta/20 bg-terracotta/8 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-terracotta"
+                        className="inline-flex items-center rounded-full border border-terracotta/20 bg-terracotta/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-terracotta"
                       >
                         {award}
                       </span>

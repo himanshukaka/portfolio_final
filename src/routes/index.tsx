@@ -165,10 +165,9 @@ function Home() {
               <br />
               Write ideas.
             </h1>
-            <p className="mt-5 max-w-xl text-sm leading-relaxed text-charcoal/72 text-pretty lg:text-[1.04rem]">
-              Product leader with a builder's bias. I write about products, markets, and the
-              incentives around them.
-            </p>
+            <h2 className="mt-5 max-w-xl font-serif text-xl leading-snug tracking-tight text-charcoal/82 text-balance lg:text-2xl">
+              Too many theories. A few built products. Some writings on how things work.
+            </h2>
             <div className="mt-7 flex flex-wrap gap-3">
               <Link
                 to="/career"
@@ -191,68 +190,12 @@ function Home() {
             </div>
           </div>
 
-          <aside className="overflow-hidden rounded-[28px] border border-border bg-[linear-gradient(180deg,#fffdf9_0%,#fbf8f1_100%)] shadow-[0_12px_40px_rgba(23,23,23,0.05)]">
-            <div className="border-b border-border px-5 py-4">
-              <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-                Current focus
-              </div>
-              <div className="mt-1 text-sm text-charcoal/65">
-                Systems, products, and the long arc of compounding work.
-              </div>
-            </div>
-
-            <div className="grid gap-4 p-5 lg:grid-cols-[1.15fr_0.85fr]">
-              <div className="relative min-h-[300px] overflow-hidden rounded-[24px] border border-border bg-white p-4">
-                <div className="absolute left-4 top-4 h-18 w-14 rounded-xl border border-border bg-[#f7f2e9]" />
-                <div className="absolute left-28 top-6 h-6 w-20 rounded-full border border-charcoal/12 bg-white" />
-                <div className="absolute left-24 top-8 h-28 w-px origin-top rotate-[24deg] bg-charcoal/20" />
-                <div className="absolute left-24 top-22 h-22 w-22 rounded-full border border-border bg-white/80" />
-
-                <div className="absolute right-6 top-6 h-22 w-32 rounded-2xl border border-border bg-[#f6f3ed] shadow-[0_8px_24px_rgba(23,23,23,0.05)]" />
-                <div className="absolute right-10 top-32 h-28 w-24 rounded-2xl border border-border bg-[#f7f5f0] shadow-[0_8px_24px_rgba(23,23,23,0.05)]" />
-                <div className="absolute right-32 top-34 h-18 w-18 rounded-[20px] border border-border bg-[#fcfbf8] shadow-[0_8px_24px_rgba(23,23,23,0.04)]" />
-
-                <div className="absolute bottom-8 left-7 h-26 w-38 rounded-[22px] border border-border bg-[#fcfbf8] p-4">
-                  <div className="h-2 w-20 rounded-full bg-terracotta/80" />
-                  <div className="mt-4 space-y-2">
-                    <div className="h-2 w-full rounded-full bg-charcoal/12" />
-                    <div className="h-2 w-3/4 rounded-full bg-charcoal/12" />
-                    <div className="h-2 w-2/3 rounded-full bg-charcoal/12" />
-                  </div>
-                </div>
-
-                <div className="absolute right-8 top-14 space-y-1.5 text-right font-serif text-[clamp(1.05rem,1.8vw,1.5rem)] leading-none text-charcoal/82">
-                  <div>I study systems.</div>
-                  <div>Build products.</div>
-                  <div>Write to think.</div>
-                </div>
-
-                <div className="absolute bottom-10 right-8 h-28 w-20 rounded-2xl border border-border bg-[#f7f2eb] p-3">
-                  <div className="space-y-2">
-                    <div className="h-2 w-10 rounded-full bg-terracotta/80" />
-                    <div className="h-2 w-12 rounded-full bg-charcoal/12" />
-                    <div className="h-2 w-8 rounded-full bg-charcoal/12" />
-                  </div>
-                  <div className="mt-6 h-12 rounded-xl border border-charcoal/10 bg-white/70" />
-                </div>
-              </div>
-
-              <div className="flex flex-col justify-between rounded-[24px] border border-border bg-white p-4">
-                <div>
-                  <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-terracotta">
-                    Notes
-                  </div>
-                  <ul className="mt-4 space-y-2.5 text-sm leading-relaxed text-charcoal/75">
-                    <li>Studying incentives before interfaces.</li>
-                    <li>Keeping the homepage short and the thinking deep.</li>
-                    <li>Designing products that survive complexity instead of hiding it.</li>
-                  </ul>
-                </div>
-                <div className="mt-5 border-t border-border pt-4 text-sm text-muted-foreground">
-                  Calm confidence. Editorial structure. Long memory.
-                </div>
-              </div>
-            </div>
+          <aside className="relative aspect-[4/5] w-full max-w-[440px] justify-self-center overflow-hidden rounded-[28px] border border-border bg-[linear-gradient(180deg,#fffdf9_0%,#f5efe6_100%)] shadow-[0_12px_40px_rgba(23,23,23,0.05)] lg:justify-self-end">
+            <img
+              src="/profile_hero_pic.png"
+              alt="Portrait of Himanshu Tiwari in a suit"
+              className="absolute inset-0 h-full w-full object-contain p-4"
+            />
           </aside>
         </div>
       </section>
@@ -354,22 +297,6 @@ function Home() {
         <HorizontalRail>
           {writingItems.map((item) =>
             item.kind === "substack" ? (
-              item.href === compactSubstackHref ? (
-                <article
-                  key={`${item.kind}-${item.href}`}
-                  className="flex h-[120px] w-[460px] shrink-0 flex-col justify-end overflow-hidden rounded-[24px] border border-border bg-white p-4"
-                >
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-medium text-charcoal/80"
-                  >
-                    Read on Substack
-                    <ArrowUpRight className="size-4" />
-                  </a>
-                </article>
-              ) : (
                 <article
                   key={`${item.kind}-${item.href}`}
                   className="flex h-[460px] w-[460px] shrink-0 flex-col overflow-hidden rounded-[24px] border border-border bg-white p-4"
@@ -382,7 +309,6 @@ function Home() {
                     className="h-[380px] w-full border-0"
                   />
                 </article>
-              )
             ) : (
               <article
                 key={`${item.kind}-${item.href}`}

@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { PageHeader } from "../components/page-header";
 
 export const Route = createFileRoute("/online_writing")({
@@ -183,28 +183,69 @@ const INTERESTS: Interest[] = [
 
 type SortKey = "relevance" | "title";
 
-const twitterNotes = [
+type Tweet = {
+  text: ReactNode;
+  url: string;
+  date: string;
+};
+
+const tweets: Tweet[] = [
   {
-    tag: "Systems",
-    text: "Most product failures are incentive failures with a nicer interface.",
+    text: <>Humanity is God by iteration</>,
+    url: "https://x.com/_kaalik/status/1876716913071439947?ref_src=twsrc%5Etfw",
+    date: "January 7, 2025",
   },
   {
-    tag: "Marketplaces",
-    text: "A narrow middle segment can be a sharp insight and a weak business at the same time.",
+    text: (
+      <>
+        gradual changes aren't enough, india needs a full blown women revolution, long overdue!
+        <br />
+        <br />
+        a revolution of the women, by the women, and for the women. it should not be hijacked by
+        political parties or any other grp for that matter
+      </>
+    ),
+    url: "https://x.com/_kaalik/status/1823874629942812982?ref_src=twsrc%5Etfw",
+    date: "August 15, 2024",
   },
   {
-    tag: "Startups",
-    text: "The best customer interview is the one that changes the company, not the slide deck.",
+    text: <>a great conversation is like a dream, it always starts in middle</>,
+    url: "https://x.com/_kaalik/status/1664251562313789440?ref_src=twsrc%5Etfw",
+    date: "June 1, 2023",
   },
   {
-    tag: "Writing",
-    text: "Short notes are often where the thesis appears before the essay does.",
+    text: (
+      <>
+        i m so invested in thinking in terms of percentage nd probabilities that i sometime miss
+        the importance of absolute!
+      </>
+    ),
+    url: "https://x.com/_kaalik/status/1657688222036811782?ref_src=twsrc%5Etfw",
+    date: "May 14, 2023",
   },
 ];
 
 function WritingPage() {
   const [filter, setFilter] = useState<Interest | "All">("All");
   const [sort, setSort] = useState<SortKey>("relevance");
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const existing = document.getElementById("x-embed-script") as HTMLScriptElement | null;
+    if (existing) {
+      window?.twttr?.widgets?.load();
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.id = "x-embed-script";
+    script.src = "https://platform.x.com/widgets.js";
+    script.async = true;
+    script.charset = "utf-8";
+    script.onload = () => window?.twttr?.widgets?.load();
+    document.body.appendChild(script);
+  }, []);
 
   const visible = useMemo(() => {
     const filtered =
@@ -222,11 +263,29 @@ function WritingPage() {
       <PageHeader
         eyebrow="Online Writing"
         eyebrowColor="text-lavender"
-        title={<>I write to understand.</>}
-        lede="Essays live on Tenets of 21st Century (moderntenets.substack.com) — on EdTech, hiring, agriculture, economy, rural India, and the institutions in between."
+        title={
+          <>
+            I write to{" "}
+            <a
+              href="#understand"
+              className="underline decoration-lavender/50 underline-offset-4 hover:decoration-lavender"
+            >
+              understand
+            </a>{" "}
+            and{" "}
+            <a
+              href="#vent"
+              className="underline decoration-lavender/50 underline-offset-4 hover:decoration-lavender"
+            >
+              vent
+            </a>
+            .
+          </>
+        }
+        lede="Essays live on Tenets of 21st Century (Substack). Shorter thoughts live on X."
       />
 
-      <section id="tenets" className="mx-auto max-w-6xl px-6 pb-24">
+      <section id="understand" className="mx-auto max-w-6xl px-6 pb-24">
         <div className="mb-8 flex flex-wrap items-baseline justify-between gap-4 border-b border-lavender/20 pb-4">
           <div>
             <h2 className="text-xs font-semibold uppercase tracking-widest text-lavender">
@@ -312,19 +371,19 @@ function WritingPage() {
         </div>
       </section>
 
-      <section className="border-t border-charcoal/10 bg-secondary/30 py-20">
+      <section id="vent" className="border-t border-charcoal/10 bg-secondary/30 py-20">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
               <div className="text-[11px] font-semibold uppercase tracking-[0.25em] text-terracotta">
-                Twitter writing
+                Vent
               </div>
               <h2 className="mt-3 font-serif text-3xl leading-tight text-balance lg:text-4xl">
-                Short notes, same line of thought.
+                Real tweets, same line of thought.
               </h2>
               <p className="mt-3 max-w-2xl text-sm leading-relaxed text-charcoal/70 text-pretty">
-                A lighter feed for ideas that belong on X, but still want structure and context
-                here.
+                Shorter thoughts belong on X. I’m keeping the embeds here so the page still reads
+                like a publication rather than a feed.
               </p>
             </div>
             <a
@@ -336,16 +395,18 @@ function WritingPage() {
               Visit @kaalik on X
             </a>
           </div>
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-            {twitterNotes.map((note) => (
+          <div className="grid gap-4">
+            {tweets.map((tweet) => (
               <article
-                key={note.text}
+                key={tweet.url}
                 className="rounded-[24px] border border-charcoal/10 bg-white p-5 shadow-[0_12px_40px_rgba(15,23,42,0.04)]"
               >
-                <div className="text-[10px] font-semibold uppercase tracking-[0.22em] text-terracotta">
-                  {note.tag}
-                </div>
-                <p className="mt-4 font-serif text-2xl leading-tight text-charcoal">{note.text}</p>
+                <blockquote className="twitter-tweet">
+                  <p lang="en" dir="ltr">
+                    {tweet.text}
+                  </p>
+                  &mdash; himanshu (@_kaalik) <a href={tweet.url}>{tweet.date}</a>
+                </blockquote>
               </article>
             ))}
           </div>
