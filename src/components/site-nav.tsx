@@ -1,11 +1,11 @@
 import { Link } from "@tanstack/react-router";
 
 const links = [
-  { to: "/", label: "Home" },
-  { to: "/experiments", label: "Thesis & Experiments" },
-  { to: "/ux_notes", label: "UX Notes" },
-  { to: "/online_writing", label: "Online Writing" },
+  // { to: "/", label: "Home" },
   { to: "/career", label: "Career" },
+  { to: "/online_writing", label: "Online Writing" },
+  { to: "/theses_and_experiments", label: "Theses & Experiments" },
+  { to: "/ux_notes", label: "UX Notes" },
 ];
 
 export function SiteNav() {
@@ -24,7 +24,7 @@ export function SiteNav() {
           {links.map((link) => (
             <Link
               key={link.to}
-              to={link.to as "/" | "/experiments" | "/ux_notes" | "/online_writing" | "/career"}
+              to={link.to as "/" | "/theses_and_experiments" | "/ux_notes" | "/online_writing" | "/career"}
               className="transition-colors hover:text-charcoal"
               activeProps={{ className: "text-charcoal" }}
             >

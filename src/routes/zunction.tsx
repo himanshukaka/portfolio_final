@@ -565,10 +565,10 @@ function ZunctionPage() {
 
         <div className="mt-8 flex flex-wrap gap-3 border-t border-charcoal/10 pt-8">
           <Link
-            to="/experiments"
+            to="/theses_and_experiments"
             className="inline-flex items-center justify-center rounded-full border border-charcoal/15 px-5 py-3 text-sm font-medium text-charcoal transition-colors hover:bg-charcoal/5"
           >
-            Back to experiments
+            Back to theses & experiments
           </Link>
           <Link
             to="/work"

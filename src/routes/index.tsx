@@ -11,18 +11,12 @@ export const Route = createFileRoute("/")({
 const thesisCards = [
   {
     tag: "Experiment",
-    title: "Zunction.in",
-    body: "A startup attempt that became a durable lesson on recurring demand.",
-    to: "/zunction",
-  },
-  {
-    tag: "Case Study",
     title: "CohortUp",
-    body: "A product case study about shared activity and split-screen timelapses.",
+    body: "A product experiment around creation of virtue based social media",
     to: "/cohortup",
   },
   {
-    tag: "Product concept",
+    tag: "Experiment",
     title: "Phone a Friend",
     body: "An AI conversation copilot for high-stakes phone calls.",
     to: "/phone_of_friend",
@@ -30,13 +24,13 @@ const thesisCards = [
   {
     tag: "Thesis",
     title: "Reimagining Indian Agriculture",
-    body: "A long-term thesis on structural capital for farming.",
+    body: "A thesis on structural fix for Indian agriculture.",
     to: "/reimagining_indian_agriculture",
   },
   {
     tag: "Thesis",
     title: "Employee's Skin in the Game",
-    body: "A thesis on organizational conviction and distributed judgment.",
+    body: "A thesis on organizational conviction and distributed information.",
     to: "/employees_skin_in_the_game",
   },
 ];
@@ -49,12 +43,12 @@ const substackWritingItems = [
     href: featuredPosts[0].url,
   },
   {
-    title: featuredPosts[2].title,
-    href: featuredPosts[2].url,
+    title: featuredPosts[1].title,
+    href: featuredPosts[1].url,
   },
   {
-    title: featuredPosts[3].title,
-    href: featuredPosts[3].url,
+    title: featuredPosts[2].title,
+    href: featuredPosts[2].url,
   },
 ];
 
@@ -94,38 +88,38 @@ const compactSubstackHref = substackWritingItems[0].href;
 
 const careerCards = [
   {
-    duration: "06/2025 — Now",
+    duration: "06/2025 — Present",
     role: "Senior Product Manager",
     company: "Quess Corp Limited",
-    body: "Productized the payroll platform into a configurable enterprise suite and onboarded 26 SaaS customers within a year.",
+    body: "Productized the payroll platform into a configurable enterprise suite.",
     to: "/career",
   },
   {
     duration: "12/2023 — 05/2025",
     role: "Product Manager",
     company: "Avsar HR Services",
-    body: "Turned an internal workforce platform into HR10X and shipped workflow, signing, and lifecycle infrastructure.",
+    body: "Turned an internal workforce platform into HR10X",
     to: "/career",
   },
   {
     duration: "05/2023 — 11/2023",
     role: "Co-founder",
     company: "Zunction.in",
-    body: "Built a marketplace for shared teaching spaces and learned how distribution can outlast the idea.",
+    body: "Attempted to build a marketplace for shared teaching spaces for educators.",
     to: "/zunction",
   },
   {
     duration: "04/2022 — 04/2023",
     role: "Python Developer",
     company: "Lokyata",
-    body: "Worked on credit-union integrations, ETL pipelines, and operational reporting.",
+    body: "Worked on credit-union API integrations and ETL pipelines",
     to: "/career",
   },
   {
     duration: "07/2019 — 04/2022",
     role: "Product Manager",
     company: "Avsar HR Services",
-    body: "Led the move from a third-party workforce platform to a proprietary enterprise platform and built the foundation for later SaaS commercialization.",
+    body: "Led the move from a third-party workforce platform to a proprietary enterprise platform",
     to: "/career",
   },
 ];
@@ -182,10 +176,10 @@ function Home() {
                 Explore Writing
               </Link>
               <Link
-                to="/cohortup"
+                to="/theses_and_experiments"
                 className="inline-flex items-center justify-center rounded-full border border-border bg-white px-5 py-2.5 text-sm font-medium text-charcoal transition-colors hover:bg-secondary"
               >
-                Open CohortUp
+                Open Theses & Experiments
               </Link>
             </div>
           </div>
@@ -201,10 +195,10 @@ function Home() {
       </section>
 
       <SectionRail
-        eyebrow="Career"
-        title="Where I worked"
-        lede="Roles, companies, and duration."
-        ctaLabel="Open career"
+        eyebrow="Where I worked"
+        title="Career"
+        lede="Roles, companies, and durations."
+        ctaLabel="Open Career"
         ctaTo="/career"
       >
         {careerCards.map((item) => (
@@ -229,68 +223,10 @@ function Home() {
         ))}
       </SectionRail>
 
-        <SectionRail
-          eyebrow="Theses"
-          title="Theses & Experiments"
-          lede="Product theses and experiments that taught the sharpest lessons."
-          ctaLabel="Open Experiments"
-        ctaTo="/experiments"
-      >
-        {thesisCards.map((card) => (
-          <Link
-            key={card.title}
-            to={card.to}
-            className="group flex h-[300px] w-[360px] shrink-0 flex-col rounded-[24px] border border-border bg-white p-5 transition-colors hover:border-terracotta/45"
-          >
-            <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-terracotta">
-              {card.tag}
-            </div>
-            <h3 className="mt-3 font-serif text-[1.7rem] leading-tight text-charcoal">
-              {card.title}
-            </h3>
-            <p className="mt-3 text-sm leading-relaxed text-charcoal/70">{card.body}</p>
-            <div className="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-medium text-charcoal/80">
-              Open
-              <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-            </div>
-          </Link>
-        ))}
-      </SectionRail>
-
-      <SectionRail
-        eyebrow="UX Notes"
-        title="UX Notes"
-        lede="Observation-led case studies, each expanded into its own page."
-        ctaLabel="Open Notes"
-        ctaTo="/ux_notes"
-      >
-        {notePages.map((item, index) => (
-          <Link
-            key={item.slug}
-            to={item.route}
-            className="group flex h-[300px] w-[360px] shrink-0 flex-col rounded-[24px] border border-border bg-white p-5 transition-transform hover:-translate-y-1"
-          >
-            <div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <span>{item.eyebrow}</span>
-            </div>
-            <div className="mt-4 h-px w-full bg-border" />
-            <h3 className="mt-4 font-serif text-[1.7rem] leading-tight text-charcoal">
-              {item.title}
-            </h3>
-            <p className="mt-3 text-sm leading-relaxed text-charcoal/70">{item.lede}</p>
-            <div className="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-medium text-charcoal/80">
-              Open
-              <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-            </div>
-          </Link>
-        ))}
-      </SectionRail>
-
-      <SectionRail
+<SectionRail
         eyebrow="Online Writing"
         title="Online Writing"
-        lede="Substack essays and Twitter notes in one line."
+        lede="Substack essays and Twitter vents"
         ctaLabel="Open Writing"
         ctaTo="/online_writing"
       >
@@ -326,6 +262,66 @@ function Home() {
           )}
         </HorizontalRail>
       </SectionRail>
+      
+        <SectionRail
+          eyebrow="Work In Progress"
+          title="Theses & Experiments"
+          lede="Product theses and experiments that keep my brain engaged."
+        ctaLabel="Open Theses & Experiments"
+        ctaTo="/theses_and_experiments"
+      >
+        {thesisCards.map((card) => (
+          <Link
+            key={card.title}
+            to={card.to}
+            className="group flex h-[300px] w-[360px] shrink-0 flex-col rounded-[24px] border border-border bg-white p-5 transition-colors hover:border-terracotta/45"
+          >
+            <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-terracotta">
+              {card.tag}
+            </div>
+            <h3 className="mt-3 font-serif text-[1.7rem] leading-tight text-charcoal">
+              {card.title}
+            </h3>
+            <p className="mt-3 text-sm leading-relaxed text-charcoal/70">{card.body}</p>
+            <div className="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-medium text-charcoal/80">
+              Open
+              <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            </div>
+          </Link>
+        ))}
+      </SectionRail>
+
+      <SectionRail
+        eyebrow="Moccasin Walk"
+        title="UX Notes"
+        lede="Rooted in real-world observations."
+        ctaLabel="Open Notes"
+        ctaTo="/ux_notes"
+      >
+        {notePages.map((item, index) => (
+          <Link
+            key={item.slug}
+            to={item.route}
+            className="group flex h-[300px] w-[360px] shrink-0 flex-col rounded-[24px] border border-border bg-white p-5 transition-transform hover:-translate-y-1"
+          >
+            <div className="flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <span>{item.eyebrow}</span>
+            </div>
+            <div className="mt-4 h-px w-full bg-border" />
+            <h3 className="mt-4 font-serif text-[1.7rem] leading-tight text-charcoal">
+              {item.title}
+            </h3>
+            <p className="mt-3 text-sm leading-relaxed text-charcoal/70">{item.lede}</p>
+            <div className="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-medium text-charcoal/80">
+              Open
+              <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            </div>
+          </Link>
+        ))}
+      </SectionRail>
+
+      
     </div>
   );
 }
@@ -366,7 +362,7 @@ function SectionRail({
               | "/online_writing"
               | "/ux_notes"
               | "/career"
-              | "/experiments"
+              | "/theses_and_experiments"
               | "/zunction"
               | "/cohortup"
               | "/phone_of_friend"

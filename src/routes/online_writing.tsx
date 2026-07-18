@@ -39,10 +39,16 @@ export interface Post {
 
 export const posts: Post[] = [
   {
+    title: "EdTech companies playing by OTT's playbook?",
+    url: "https://moderntenets.substack.com/p/edtech-companies-playing-by-otts",
+    interests: ["EdTech & Education", "Tech & Product"],
+    relevance: 99,
+  },
+  {
     title: "The paradox of Surplus Supply and Increasing Challenges in Hiring!",
     url: "https://moderntenets.substack.com/p/the-paradox-of-surplus-supply-and",
     interests: ["Hiring & Work", "Economy & Inequality"],
-    relevance: 100,
+    relevance: 78,
   },
   {
     title: "Understanding EdTech",
@@ -51,22 +57,16 @@ export const posts: Post[] = [
     relevance: 95,
   },
   {
-    title: "EdTech companies playing by OTT's playbook?",
-    url: "https://moderntenets.substack.com/p/edtech-companies-playing-by-otts",
-    interests: ["EdTech & Education", "Tech & Product"],
-    relevance: 92,
-  },
-  {
-    title: "Creator Economy: The EdTech Version (Part 1)",
+    title: "Creator Economy: The EdTech Version",
     url: "https://moderntenets.substack.com/p/creator-economy-the-edtech-version",
     interests: ["EdTech & Education", "Tech & Product"],
-    relevance: 88,
+    relevance: 100,
   },
   {
     title: "Temporary Staffing: the Overlooked Remainder?",
     url: "https://moderntenets.substack.com/p/temporary-staffing-the-overlooked",
     interests: ["Hiring & Work"],
-    relevance: 86,
+    relevance: 96,
   },
   {
     title: "Entrepreneurship and Empowering Educators!",
@@ -126,7 +126,7 @@ export const posts: Post[] = [
     title: "Co-operative Banks: A filthy rural monster",
     url: "https://moderntenets.substack.com/p/co-operative-banks-a-filthy-rural",
     interests: ["Agriculture & Rural", "Economy & Inequality"],
-    relevance: 68,
+    relevance: 89,
   },
   {
     title: "Damaged Safety Valves of Wealth Inequality!",
@@ -156,7 +156,7 @@ export const posts: Post[] = [
     title: "'Possible' and 'Impossible' with the prism of Time Dimension!",
     url: "https://moderntenets.substack.com/p/possible-and-impossible-with-the",
     interests: ["Society & Institutions"],
-    relevance: 40,
+    relevance: 69,
   },
   {
     title: "Prevention from SEO",
@@ -255,6 +255,13 @@ function WritingPage() {
     } else {
       filtered.sort((a, b) => b.relevance - a.relevance);
     }
+
+    const featuredIndex = filtered.findIndex((post) => isFeaturedSubstackPost(post.url));
+    if (featuredIndex > 0) {
+      const [featured] = filtered.splice(featuredIndex, 1);
+      filtered.unshift(featured);
+    }
+
     return filtered;
   }, [filter, sort]);
 
@@ -364,7 +371,7 @@ function WritingPage() {
                 title={p.title}
                 loading="lazy"
                 sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox allow-same-origin"
-                className="mt-4 h-[320px] w-full border-0"
+                className="mt-4 h-[360px] w-full border-0"
               />
             </article>
           ))}
@@ -395,11 +402,11 @@ function WritingPage() {
               Visit @kaalik on X
             </a>
           </div>
-          <div className="grid gap-4">
+          <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 [scrollbar-width:thin]">
             {tweets.map((tweet) => (
               <article
                 key={tweet.url}
-                className="rounded-[24px] border border-charcoal/10 bg-white p-5 shadow-[0_12px_40px_rgba(15,23,42,0.04)]"
+                className="min-w-[320px] max-w-[320px] shrink-0 snap-start rounded-[24px] border border-charcoal/10 bg-white p-5 shadow-[0_12px_40px_rgba(15,23,42,0.04)]"
               >
                 <blockquote className="twitter-tweet">
                   <p lang="en" dir="ltr">
@@ -419,8 +426,12 @@ function WritingPage() {
 function substackEmbedUrl(postUrl: string): string {
   try {
     const u = new URL(postUrl);
-    return `${u.origin}/embed${u.pathname}`;
+    return `${u.origin}/embed${u.pathname}?v=20260717`;
   } catch {
     return postUrl;
   }
+}
+
+function isFeaturedSubstackPost(postUrl: string): boolean {
+  return postUrl.includes("/edtech-companies-playing-by-otts");
 }

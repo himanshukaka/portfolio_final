@@ -12,6 +12,8 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as ZunctionRouteImport } from './routes/zunction'
 import { Route as WorkRouteImport } from './routes/work'
 import { Route as Ux_notesRouteImport } from './routes/ux_notes'
+import { Route as Theses_and_experimentsRouteImport } from './routes/theses_and_experiments'
+import { Route as ThesesRouteImport } from './routes/theses'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as Reimagining_indian_agricultureRouteImport } from './routes/reimagining_indian_agriculture'
 import { Route as Recruiters_live_in_excelRouteImport } from './routes/recruiters_live_in_excel'
@@ -42,6 +44,16 @@ const WorkRoute = WorkRouteImport.update({
 const Ux_notesRoute = Ux_notesRouteImport.update({
   id: '/ux_notes',
   path: '/ux_notes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Theses_and_experimentsRoute = Theses_and_experimentsRouteImport.update({
+  id: '/theses_and_experiments',
+  path: '/theses_and_experiments',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ThesesRoute = ThesesRouteImport.update({
+  id: '/theses',
+  path: '/theses',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -145,6 +157,8 @@ export interface FileRoutesByFullPath {
   '/recruiters_live_in_excel': typeof Recruiters_live_in_excelRoute
   '/reimagining_indian_agriculture': typeof Reimagining_indian_agricultureRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/theses': typeof ThesesRoute
+  '/theses_and_experiments': typeof Theses_and_experimentsRoute
   '/ux_notes': typeof Ux_notesRoute
   '/work': typeof WorkRoute
   '/zunction': typeof ZunctionRoute
@@ -166,6 +180,8 @@ export interface FileRoutesByTo {
   '/recruiters_live_in_excel': typeof Recruiters_live_in_excelRoute
   '/reimagining_indian_agriculture': typeof Reimagining_indian_agricultureRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/theses': typeof ThesesRoute
+  '/theses_and_experiments': typeof Theses_and_experimentsRoute
   '/ux_notes': typeof Ux_notesRoute
   '/work': typeof WorkRoute
   '/zunction': typeof ZunctionRoute
@@ -188,6 +204,8 @@ export interface FileRoutesById {
   '/recruiters_live_in_excel': typeof Recruiters_live_in_excelRoute
   '/reimagining_indian_agriculture': typeof Reimagining_indian_agricultureRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/theses': typeof ThesesRoute
+  '/theses_and_experiments': typeof Theses_and_experimentsRoute
   '/ux_notes': typeof Ux_notesRoute
   '/work': typeof WorkRoute
   '/zunction': typeof ZunctionRoute
@@ -211,6 +229,8 @@ export interface FileRouteTypes {
     | '/recruiters_live_in_excel'
     | '/reimagining_indian_agriculture'
     | '/sitemap.xml'
+    | '/theses'
+    | '/theses_and_experiments'
     | '/ux_notes'
     | '/work'
     | '/zunction'
@@ -232,6 +252,8 @@ export interface FileRouteTypes {
     | '/recruiters_live_in_excel'
     | '/reimagining_indian_agriculture'
     | '/sitemap.xml'
+    | '/theses'
+    | '/theses_and_experiments'
     | '/ux_notes'
     | '/work'
     | '/zunction'
@@ -253,6 +275,8 @@ export interface FileRouteTypes {
     | '/recruiters_live_in_excel'
     | '/reimagining_indian_agriculture'
     | '/sitemap.xml'
+    | '/theses'
+    | '/theses_and_experiments'
     | '/ux_notes'
     | '/work'
     | '/zunction'
@@ -275,6 +299,8 @@ export interface RootRouteChildren {
   Recruiters_live_in_excelRoute: typeof Recruiters_live_in_excelRoute
   Reimagining_indian_agricultureRoute: typeof Reimagining_indian_agricultureRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  ThesesRoute: typeof ThesesRoute
+  Theses_and_experimentsRoute: typeof Theses_and_experimentsRoute
   Ux_notesRoute: typeof Ux_notesRoute
   WorkRoute: typeof WorkRoute
   ZunctionRoute: typeof ZunctionRoute
@@ -301,6 +327,20 @@ declare module '@tanstack/react-router' {
       path: '/ux_notes'
       fullPath: '/ux_notes'
       preLoaderRoute: typeof Ux_notesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/theses_and_experiments': {
+      id: '/theses_and_experiments'
+      path: '/theses_and_experiments'
+      fullPath: '/theses_and_experiments'
+      preLoaderRoute: typeof Theses_and_experimentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/theses': {
+      id: '/theses'
+      path: '/theses'
+      fullPath: '/theses'
+      preLoaderRoute: typeof ThesesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -435,6 +475,8 @@ const rootRouteChildren: RootRouteChildren = {
   Recruiters_live_in_excelRoute: Recruiters_live_in_excelRoute,
   Reimagining_indian_agricultureRoute: Reimagining_indian_agricultureRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  ThesesRoute: ThesesRoute,
+  Theses_and_experimentsRoute: Theses_and_experimentsRoute,
   Ux_notesRoute: Ux_notesRoute,
   WorkRoute: WorkRoute,
   ZunctionRoute: ZunctionRoute,

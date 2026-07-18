@@ -19,6 +19,15 @@ export const notePages: NotePage[] = [
     route: "/recruiters_live_in_excel",
   },
   {
+    slug: "bulk-paste-filtering",
+    title: "The Feature Nobody Planned To Love",
+    eyebrow: "Bulk paste filtering",
+    lede:
+      "How a tiny shortcut became the signature experience because it removed the most annoying part of the job.",
+    summary:
+      "The smallest friction removal can become the thing people use every day.",
+    route: "/bulk_paste_filtering",
+  },  {
     slug: "bilaspur-diaries",
     title: "Bilaspur Diaries",
     eyebrow: "Compliance, not perfection",
@@ -28,6 +37,7 @@ export const notePages: NotePage[] = [
       "The compliant path only works when it is faster than the workaround.",
     route: "/bilaspur_diaries",
   },
+
   {
     slug: "cafes-human-behaviour",
     title: "Cafes & Human Behaviour",
@@ -37,15 +47,5 @@ export const notePages: NotePage[] = [
     summary:
       "Segmentation is not just age or income. It is the job a space is hired to do.",
     route: "/cafes_human_behaviour",
-  },
-  {
-    slug: "bulk-paste-filtering",
-    title: "The Feature Nobody Planned To Love",
-    eyebrow: "Bulk paste filtering",
-    lede:
-      "How a tiny shortcut became the signature experience because it removed the most annoying part of the job.",
-    summary:
-      "The smallest friction removal can become the thing people use every day.",
-    route: "/bulk_paste_filtering",
   },
 ];
