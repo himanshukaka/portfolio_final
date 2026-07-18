@@ -25,134 +25,148 @@ export const Route = createFileRoute("/theses_and_experiments")({
 
 const experiments = [
   {
-    name: "Cohortup",
-    year: "2021",
-    kind: "Consumer social · Prototype",
+    name: "CohortUp",
+    kind: "Consumer Learning · Prototype",
     hypothesis:
-      "That learning is fundamentally social, and that a product built around cohort dynamics could keep people finishing what they started.",
+      "Learning is rarely an information problem. It's often a social commitment problem. If progress became visible to a small group instead of remaining private, more people would finish what they started.",
     story: [
       {
-        h: "The user problem",
-        p: "Self-paced online learning has a drop-off cliff. People start alone and stop alone.",
+        h: "Observation",
+        p: "People rarely quit online courses because the content is difficult. They quit because no one expects them to come back tomorrow. The internet optimized access to knowledge, but removed the accountability that classrooms naturally create.",
       },
       {
-        h: "The mechanic we tried",
-        p: "Weekly cohorts, structured check-ins, and public commitments — with a lightweight prototype in React and Firebase.",
+        h: "Exploration",
+        p: "Instead of building another course platform, I explored whether small learning cohorts could become the product. The prototype centered around users trying to do an activity together and feeling being seen while sharing their progress toward shared goals.",
       },
       {
-        h: "What failed",
-        p: "We could manufacture the ceremony but not the vulnerability. Sharing incomplete work is a trust problem, not an interface problem.",
+        h: "Friction",
+        p: "People were comfortable consuming content together, but far less comfortable working in public. The hardest challenge isn't coordinating schedules; it was creating enough trust for vulnerability.",
       },
       {
-        h: "What it taught me",
-        p: "Social mechanics can amplify motivation that already exists. They cannot create it. Distribution and community pre-existed the product, not the other way around.",
+        h: "Current Belief",
+        p: "Social accountability engineered in product design can drive learning outcomes.",
       },
     ],
-    cta: { label: "Open CohortUp", to: "/cohortup" },
+    cta: {
+      label: "Explore CohortUp",
+      to: "/cohortup",
+    },
   },
-  {
-    name: "Zunction.in",
-    year: "2023",
-    kind: "Marketplace · Founder-led",
-    hypothesis:
-      "That underused educational infrastructure — empty classrooms in the evenings — could become shared teaching space for independent educators.",
-    story: [
-      {
-        h: "The market observation",
-        p: "Independent tutors and small cohorts were priced out of dedicated real estate. Schools had empty rooms after 4pm.",
-      },
-      {
-        h: "What we tried",
-        p: "Founder-led B2B sales to schools, a lightweight booking product for educators, and a small pilot with paying users.",
-      },
-      {
-        h: "Why it stopped",
-        p: "The unit economics of physical space did not scale with a thin software layer. The supply side worked; the demand side needed a distribution motion we didn't have.",
-      },
-      {
-        h: "What it taught me",
-        p: "Verify distribution cost before building the technology. Real estate marketplaces are not software problems in disguise.",
-      },
-    ],
-    cta: { label: "Read Zunction", to: "/zunction" },
-  },
+
+  // {
+  //   name: "Zunction.in",
+  //   kind: "Marketplace · Founder-led Experiment",
+  //   hypothesis:
+  //     "Educational infrastructure remains idle for much of the day. If schools could temporarily lease unused classrooms to independent educators, existing assets could create value for both sides.",
+  //   story: [
+  //     {
+  //       h: "Observation",
+  //       p: "Schools have classrooms sitting empty every evening, while independent educators struggle to afford dedicated teaching spaces. The inefficiency existed on both sides of the market.",
+  //     },
+  //     {
+  //       h: "Exploration",
+  //       p: "I built a marketplace connecting schools with tutors and small educational businesses. Beyond the product, the experiment involved founder-led sales, partnerships, pricing, and validating whether both sides truly wanted the exchange.",
+  //     },
+  //     {
+  //       h: "Friction",
+  //       p: "Schools were easier to convince than expected. Finding educators consistently willing to book spaces at scale proved much harder. The bottleneck wasn't product quality—it was customer acquisition economics.",
+  //     },
+  //     {
+  //       h: "Current Belief",
+  //       p: "Marketplaces rarely fail because matching is difficult. They fail because one side is too expensive to acquire repeatedly. Distribution deserves validation before software.",
+  //     },
+  //   ],
+  //   cta: {
+  //     label: "Read the Story",
+  //     to: "/zunction",
+  //   },
+  // },
+
   {
     name: "Phone a Friend",
-    year: "Concept · 2026",
-    kind: "AI copilot · Product concept",
+    kind: "AI Copilot · Product Thesis",
     hypothesis:
-      "That important conversations can feel less fragile when an AI assistant listens, understands context, and quietly suggests the next best response.",
+      "Real-time conversations often fail because people cannot retrieve knowledge quickly enough. An AI copilot could reduce cognitive load without replacing human judgment.",
     story: [
       {
-        h: "The opportunity",
-        p: "Recruiting, sales, support, negotiations, and investor calls all share the same problem: people have to think, remember, and respond in real time under pressure.",
+        h: "Observation",
+        p: "Recruiters, salespeople, interview candidates, support agents, and negotiators all face moments where they think of the right response a few minutes too late. Conversation is often a memory problem disguised as a communication problem.",
       },
       {
-        h: "What the concept does",
-        p: "It listens to the conversation, retrieves context, detects risk, and suggests what to ask or say next without turning the call into a chat interface.",
+        h: "Exploration",
+        p: "The concept listens to conversations, understands context, retrieves relevant information, identifies missing questions, and quietly suggests what to ask or say next. The goal isn't to automate conversations, but to help people stay present during them.",
       },
       {
-        h: "Why it is a concept",
-        p: "The technical and regulatory constraints are real. Permission, consent, call recording policy, mobile OS restrictions, and enterprise trust all shape what is possible.",
+        h: "Friction",
+        p: "Building the assistant is only half the challenge. Privacy, user consent, enterprise trust, operating system restrictions, and regulation may ultimately determine whether products like this become practical.",
       },
       {
-        h: "What it taught me",
-        p: "The product story is stronger when framed as a concept. Strategic ideas do not need fake shipped-product language to be credible.",
+        h: "Current Belief",
+        p: "AI assistants will gradually shift from generating content after conversations to improving decisions during conversations. The biggest challenge won't be intelligence—it will be trust.",
       },
     ],
-    cta: { label: "View Concept", to: "/phone_of_friend" },
+    cta: {
+      label: "View Concept",
+      to: "/phone_of_friend",
+    },
   },
+
   {
     name: "Reimagining Indian Agriculture",
-    year: "Thesis · 2026",
-    kind: "Long-term thesis",
+    kind: "Institutional Design · Long-term Thesis",
     hypothesis:
-      "That Indian agriculture is constrained less by inputs than by the lack of structural capital and institutional layers.",
+      "The biggest constraint in Indian agriculture isn't technology. It's institutional design. Farmers carry most of the operational risk while having limited access to scalable capital and professional management.",
     story: [
       {
-        h: "The problem",
-        p: "Farmers face fragmented landholdings, volatile incomes, concentrated risk, and nearly complete exposure to operational uncertainty.",
+        h: "Observation",
+        p: "Most agricultural innovation focuses on improving farming itself—better seeds, machinery, drones, or marketplaces. Much less attention goes toward redesigning the financial and operational architecture surrounding farming.",
       },
       {
-        h: "The core thesis",
-        p: "The next frontier is not just better seeds, drones, or marketplaces. It is redesigning the financial and operational architecture around farming.",
+        h: "Exploration",
+        p: "I'm exploring whether agriculture could benefit from new financial instruments and operational structures that better separate ownership, capital, management, and execution. Rather than treating farms as isolated units, the thesis imagines agriculture as an investable operating system.",
       },
       {
-        h: "What changes",
-        p: "New layers between capital and cultivation can let farmers retain land ownership while still participating in higher productivity and economic upside.",
+        h: "Open Questions",
+        p: "Can capital participate without displacing ownership? Can farmers retain control while sharing upside differently? Can agricultural risk become diversified instead of remaining individual?",
       },
       {
-        h: "What it taught me",
-        p: "Some of the most meaningful product ideas are really institutional design questions.",
+        h: "Current Belief",
+        p: "Some of the highest-impact products are not apps or platforms. They're new institutions that reshape incentives and coordination.",
       },
     ],
-    cta: { label: "Open Thesis", to: "/reimagining_indian_agriculture" },
+    cta: {
+      label: "Read Thesis",
+      to: "/reimagining_indian_agriculture",
+    },
   },
+
   {
     name: "Employee's Skin in the Game",
-    year: "Thesis · 2026",
-    kind: "Long-term thesis",
+    kind: "Organization Design · Long-term Thesis",
     hypothesis:
-      "That organizations may uncover better judgment if employees can allocate conviction, not just time.",
+      "Employees contribute time to organizations but have limited ways to express conviction. Organizations may make better decisions if they could measure judgment alongside execution.",
     story: [
       {
-        h: "The observation",
-        p: "Different people inside a company see different parts of the same problem, but their predictions rarely compound into something measurable.",
+        h: "Observation",
+        p: "Every company contains people who correctly anticipate product failures, customer behavior, operational risks, or strategic opportunities. Most of those insights disappear in meetings because there is no mechanism to aggregate them.",
       },
       {
-        h: "The premise",
-        p: "A limited pool of organizational conviction could let people express belief in outcomes the way markets express belief in prices.",
+        h: "Exploration",
+        p: "I'm exploring whether organizations could introduce systems that allow employees to allocate limited conviction toward outcomes they believe in—not as gambling or compensation, but as a structured way to surface dispersed knowledge.",
       },
       {
-        h: "The tension",
-        p: "The idea is attractive because it prizes judgment. It is risky because organizations can turn anything into theater.",
+        h: "Friction",
+        p: "Any incentive system changes behavior. A poorly designed mechanism could encourage politics, popularity contests, or short-term thinking instead of better judgment. The system matters more than the market.",
       },
       {
-        h: "What it taught me",
-        p: "Some organization problems are really questions about incentives, information, and who gets to matter.",
+        h: "Current Belief",
+        p: "Organizations improve when information flows upward. Markets aggregate belief through prices; companies may eventually invent their own mechanisms to aggregate internal conviction.",
       },
     ],
-    cta: { label: "Open Thesis", to: "/employees_skin_in_the_game" },
+    cta: {
+      label: "Read Thesis",
+      to: "/employees_skin_in_the_game",
+    },
   },
 ];
 
@@ -160,10 +174,10 @@ function ThesesPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Theses"
+        eyebrow="Theses & Experiments"
         eyebrowColor="text-marigold"
-        title={<>Things That Didn't Work Out.</>}
-        lede="Some became products. Some became lessons. The point isn't to rewrite failure as success, but to be honest about what was learned. The quality of the reflection matters more than the outcome."
+        title={<>Things That I am figuring Out.</>}
+        lede="Every product starts as an observation. Some observations become prototypes. Others become companies. A few remain unfinished ideas because the question is still more valuable than the answer."
       />
       <div className="mx-auto max-w-6xl space-y-24 px-6 pb-32">
         {experiments.map((e) => (

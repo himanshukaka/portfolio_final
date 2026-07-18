@@ -223,6 +223,36 @@ function Home() {
         ))}
       </SectionRail>
 
+      
+        <SectionRail
+          eyebrow="Work In Progress"
+          title="Theses & Experiments"
+          lede="Product theses and experiments that keep my brain engaged."
+        ctaLabel="Open Theses & Experiments"
+        ctaTo="/theses_and_experiments"
+      >
+        {thesisCards.map((card) => (
+          <Link
+            key={card.title}
+            to={card.to}
+            className="group flex h-[300px] w-[360px] shrink-0 flex-col rounded-[24px] border border-border bg-white p-5 transition-colors hover:border-terracotta/45"
+          >
+            <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-terracotta">
+              {card.tag}
+            </div>
+            <h3 className="mt-3 font-serif text-[1.7rem] leading-tight text-charcoal">
+              {card.title}
+            </h3>
+            <p className="mt-3 text-sm leading-relaxed text-charcoal/70">{card.body}</p>
+            <div className="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-medium text-charcoal/80">
+              Open
+              <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            </div>
+          </Link>
+        ))}
+      </SectionRail>
+
+
 <SectionRail
         eyebrow="Online Writing"
         title="Online Writing"
@@ -261,34 +291,6 @@ function Home() {
             ),
           )}
         </HorizontalRail>
-      </SectionRail>
-      
-        <SectionRail
-          eyebrow="Work In Progress"
-          title="Theses & Experiments"
-          lede="Product theses and experiments that keep my brain engaged."
-        ctaLabel="Open Theses & Experiments"
-        ctaTo="/theses_and_experiments"
-      >
-        {thesisCards.map((card) => (
-          <Link
-            key={card.title}
-            to={card.to}
-            className="group flex h-[300px] w-[360px] shrink-0 flex-col rounded-[24px] border border-border bg-white p-5 transition-colors hover:border-terracotta/45"
-          >
-            <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-terracotta">
-              {card.tag}
-            </div>
-            <h3 className="mt-3 font-serif text-[1.7rem] leading-tight text-charcoal">
-              {card.title}
-            </h3>
-            <p className="mt-3 text-sm leading-relaxed text-charcoal/70">{card.body}</p>
-            <div className="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-medium text-charcoal/80">
-              Open
-              <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-            </div>
-          </Link>
-        ))}
       </SectionRail>
 
       <SectionRail

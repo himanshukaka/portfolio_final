@@ -38,14 +38,14 @@ export const notePages: NotePage[] = [
     route: "/bilaspur_diaries",
   },
 
-  {
-    slug: "cafes-human-behaviour",
-    title: "Cafes & Human Behaviour",
-    eyebrow: "Same product, different need",
-    lede:
-      "A sociology-style note on how one café can serve comfort in one city and privacy in another.",
-    summary:
-      "Segmentation is not just age or income. It is the job a space is hired to do.",
-    route: "/cafes_human_behaviour",
-  },
+  // {
+  //   slug: "cafes-human-behaviour",
+  //   title: "Cafes & Human Behaviour",
+  //   eyebrow: "Same product, different need",
+  //   lede:
+  //     "A sociology-style note on how one café can serve comfort in one city and privacy in another.",
+  //   summary:
+  //     "Segmentation is not just age or income. It is the job a space is hired to do.",
+  //   route: "/cafes_human_behaviour",
+  // },
 ];
